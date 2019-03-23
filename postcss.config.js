@@ -1,11 +1,12 @@
+const postcssPresetEnv = require('postcss-preset-env');
+
 module.exports = {
   plugins: [
-    require("autoprefixer")({}),
-    require("postcss-simple-vars"),
+    require("autoprefixer")(),
     require("postcss-import"),
+    require('postcss-advanced-variables'),
+    postcssPresetEnv(),
     require("postcss-extend"),
-    require("postcss-nested"),
-    require("postcss-mixins"),
-    require("postcss-inherit")
+    require("postcss-mixins")
   ]
 };
