@@ -1,5 +1,3 @@
-import * as count from './countActions'
+import * as count from './countActions';
 
-export {
-    count
-}
+export { count };
