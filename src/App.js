@@ -3,12 +3,16 @@ import logo from './logo.svg';
 import './App.css';
 
 import CounterContainer from './containers/CounterContainer';
-
+const Questions = ({ answer, className }) => <div className={className}>{answer}</div>;
 class App extends Component {
   render() {
+    const arr = ['Yes', 'No', 'Maybeso'];
     return (
       <div className="App">
         <CounterContainer />
+        {arr.map(response => (
+          <Questions className="Purple" answer={response} />
+        ))}
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
