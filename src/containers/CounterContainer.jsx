@@ -19,9 +19,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   };
 };
 
-const Counter = connect(
+export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(CounterComponent);
-
-export default Counter;

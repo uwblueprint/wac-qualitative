@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Counter = ({ count, increment, decrement }) => {
+const CounterComponent = ({ count, increment, decrement }) => {
   const incrementClick = () => increment();
   const decrementClick = () => decrement();
   return (
@@ -12,4 +12,4 @@ const Counter = ({ count, increment, decrement }) => {
   );
 };
 
-export default Counter;
+export default CounterComponent;
