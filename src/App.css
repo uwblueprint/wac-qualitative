@@ -12,6 +12,8 @@
 
 .Purple {
   color: $purple;
+  border: 1px;
+  border-color: var(--light-purple);
 }
 
 .App-header {
