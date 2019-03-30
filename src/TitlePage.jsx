@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './styles/images/logo.png';
 import avatar from './styles/images/personIcon.png';
 import './App.css';
+import './TitlePage.css';
 
 class TitlePage extends Component {
 
@@ -23,22 +24,9 @@ top: '68px',
 textalign:'left'
     }; 
 
-    var buttonStyle = {
-      background: ' #594FD1',
-      fontfamily: 'Barlow',
-fontstyle: 'normal',
-fontweight: 'normal',
-fontsize: '15px',
-lineheight: '21px',
-textalign: 'center',
-color:'white',
-borderRadius: '2px',
-height: '45px',
-width: '135px',
-
-    }
     return (
-      <div style={cardStyle}>
+      <div>
+      <div className="cardStyle">
       <p>hello world!!!!!!!</p>
       <div >
 <img  src={logo} alt="Logo"/>
@@ -50,8 +38,25 @@ width: '135px',
 This tool is designed to be used to assess the level of bias that is present in dataset. This is designed to assess the level of bias prior to analysis. To get a sense of the sources and locations of potential bias in your data most completely you’ll need the a copy of the survey tool that was used to collect the data, the codebook, and the document that tells you how the data was sampled and collected.
 
 </p>
-      <div style={buttonStyle}>
+      <div className="buttonStyle" >
       Begin
+      </div>
+      </div>
+      <div className="bottomBorder"> 
+      <div className ="bottomTextL">
+      <h3>Who we are</h3>
+      <p>We All Count is a project dedicated to equity in data science. Read all about the project here.</p>
+      </div>
+      <div className ="bottomTextM">
+      <h3>How Does It Work?</h3>
+      <p>Want to learn more about the process? Find out using the link below.
+      </p>
+      </div>
+      <div className ="bottomTextR">
+      <h3>Speak To A Specialist</h3>
+      <p>Would you like one of our specialists to get back to you with some expert advice on the potential bias in your dataset? If so, please click here.</p>
+      </div>
+      
       </div>
       </div>
     );

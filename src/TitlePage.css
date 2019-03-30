@@ -1,0 +1,61 @@
+
+@import url('https://fonts.googleapis.com/css?family=Barlow');
+.body {
+    font-family: "barlow";
+    font-style: "normal";
+}
+.buttonStyle {
+    position: absolute;
+    width: 135px;
+    height: 45px;
+    left: 360px;
+    top: 639px;
+    
+    /* Purple 1 */
+    background: #594FD1;
+    border-radius: 2px;
+}
+
+.cardStyle {
+position: absolute;
+width: 840px;
+height: 668px;
+left: 300px;
+top: 68px;
+
+background: #FFFFFF;
+/* CARD STROKE STYLE */
+border: 1px solid #E1E1E1;
+box-sizing: border-box;/* Card drop shadow */
+box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.07);
+border-radius: 2px;
+}
+
+.bottomBorder {
+    position: absolute;
+    width: 1440px;
+    height: 220px;
+    left: 0px;
+    top: 0px;
+    display: flex;
+    flex-direction: row;
+    
+    /* Header Text */
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.bottomTextL {
+    width: 100px;
+    margin-left: 10%;
+    margin: 5%;
+}
+
+.bottomTextM {
+    width: 100px; 
+    margin: 5%;
+}
+.bottomTextR {
+    width: 100px;
+    margin: 5%;
+    margin-right: 10%;
+}
