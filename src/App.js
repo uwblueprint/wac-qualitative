@@ -1,31 +1,35 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import {
+  BrowserRouter as Router,
+  Route,
+  Link
+} from 'react-router-dom';
 import './App.css';
-
-import CounterContainer from './containers/CounterContainer';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <CounterContainer />
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <Router>
+        <div>
+          <Link to={{ pathname: `/questionaire/1` }}>Questionaire</Link>
+        </div>
+        <Route exact path={`/questionaire/:pageNum`} component={Questionaire} />
+      </Router>
     );
   }
+}
+
+// TODO: Replace this with the actual questionaire component
+const Questionaire = ({ match }) => {
+  const pageNum = parseInt(match.params.pageNum)
+  return (
+    <div>
+      <h1>Question {parseInt(pageNum)}</h1>
+      <div>
+        <Link to={{ pathname: `/questionaire/${(pageNum + 1).toString()}` }}>Questionaire Page {(pageNum + 1).toString()}</Link>
+      </div>
+    </div >
+  )
 }
 
 export default App;
