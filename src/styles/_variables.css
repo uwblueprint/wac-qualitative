@@ -1,7 +1,11 @@
 /*
  * Variables
  */
+$purple: #312975;
 
+:root {
+  --light-purple: #594fd1; /* local variable */
+}
 
 /*
  * Extendable Classes
