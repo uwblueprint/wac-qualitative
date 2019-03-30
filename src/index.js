@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux'; // redux bindings for react
 import thunk from 'redux-thunk'; // to use promises for asynchronous actions
 import { createStore, applyMiddleware, compose } from 'redux'; // to create the store and middleware
+import createEngine from 'redux-storage-engine-localstorage';
+import * as storage from 'redux-storage'
 
 import './index.css';
 import App from './App';
@@ -10,13 +12,18 @@ import reducers from './reducers/index.js';
 import * as serviceWorker from './serviceWorker';
 import initialStore from './initialStore';
 
-const middleware = [thunk];
+const engine = createEngine('question-response-key');
+const middleware = [thunk, storage.createMiddleware(engine)];
+
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(
     reducers,
     initialStore,
     composeEnhancers(applyMiddleware(...middleware))
 );
+
+const load = storage.createLoader(engine);
+load(store);
 
 ReactDOM.render(
     <Provider store={store}>
