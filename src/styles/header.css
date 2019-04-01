@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css?family=Barlow');
+
+* {
+    margin: 0;
+}
+
+.header-container {
+    padding:  45px 300px 90px 300px;
+    background: #ffffff;
+    border: 1px solid #F2F2F2;
+    box-sizing: border-box;
+    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.07);
+    width: 100%;
+}
+
+.text {
+    text-align: left;
+    font-style: normal;
+    font-weight: 500;
+    font-family: 'Barlow', sans-serif;
+}
+
+.subheader {
+    color: #594FD1;
+    font-size: 13px;
+    margin-top: 7px;
+}
+
+.header {
+    font-size: 15px;
+}
+
+.title {
+    font-size: 25px;
+    margin-top: 2px;
+}
+
+.logo {
+    position: relative;
+    bottom: 80px;
+    width: 79px;
+    height: 30px;
+    margin-left: 645px;
+}

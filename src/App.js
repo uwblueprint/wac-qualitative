@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Header from "./Header.jsx";
 
 import CounterContainer from './containers/CounterContainer';
 
@@ -9,10 +10,12 @@ class App extends Component {
     return (
       <div className="App">
         <CounterContainer />
+        <Header />
+        {/* TODO: remove */}
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
-            Edit <code>src/App.js</code> and save to reload.
+            Stephen's the best <code>src/App.js</code> and save to reload.
           </p>
           <a
             className="App-link"
