@@ -8,7 +8,7 @@ class Questionaire extends Component {
   render() {
     return (
       <div>
-        <Header pageNum={this.props.pageNum} />
+        <Header />
         <h1>Question {this.props.pageNum.toString()}</h1>
         <Link
           to={{
