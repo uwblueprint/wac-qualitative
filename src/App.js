@@ -12,8 +12,8 @@ class App extends Component {
     return (
       <Router>
         <Route exact path={`/`} component={Intro} />
-        <Route exact path={`/questionaire/:pageNum`} render={({ match }) =>
-          <Questionaire pageNum={parseInt(match.params.pageNum)} />} />
+        <Route exact path={`/questionaire/:pageNum`} render={({ match: { params: { pageNum } } }) =>
+          <Questionaire pageNum={parseInt(pageNum)} />} />
       </Router>
     );
   }
