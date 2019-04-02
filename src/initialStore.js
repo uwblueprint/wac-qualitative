@@ -1,6 +1,6 @@
 const initialStore = {
   count: 0,
-  questions: [{}, {}, {}, {}, {}, {}, {}, {}],
+  questions: [{}, {}, {}, {}, {}],
   pageNum: 3
 };
 
