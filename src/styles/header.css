@@ -1,10 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Barlow');
 
-* {
-    margin: 0;
-}
-
 .header-container {
+    min-width: 700px;
     padding:  45px 300px 90px 300px;
     background: #ffffff;
     border: 1px solid #F2F2F2;
@@ -13,11 +10,19 @@
     width: 100%;
 }
 
+.container {
+    display: flex;
+    justify-content: space-between;
+
+}
+
 .text {
     text-align: left;
     font-style: normal;
     font-weight: 500;
     font-family: 'Barlow', sans-serif;
+    margin-bottom: 0px;
+
 }
 
 .subheader {
@@ -28,6 +33,7 @@
 
 .header {
     font-size: 15px;
+    margin: 0 auto;
 }
 
 .title {
@@ -37,8 +43,8 @@
 
 .logo {
     position: relative;
-    bottom: 80px;
     width: 79px;
     height: 30px;
-    margin-left: 645px;
+    float: right;
+    vertical-align: text-top;
 }
