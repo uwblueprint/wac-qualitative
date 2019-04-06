@@ -4,16 +4,14 @@ import './styles/header.css';
 
 class Header extends Component {
     render() {
+        var currentPage = "1";
+        var totalPages = "8";
         return <div className="header-container">
-            <div className="container">
-                <div>
-                    <h2 className="text header">Dataset Bias Assessment Tool</h2>
-                </div>
-                <div>
-                    <img className="logo" src={logo} alt="" />
-                </div>
+            <div>
+                <img className="logo" src={logo} alt="" />
             </div>
-            <p className="text subheader">Section 1/8</p>
+            <h2 className="text header">Dataset Bias Assessment Tool</h2>
+            <p className="text subheader">Section {currentPage}/{totalPages}</p>
             <h1 className="text title">Progress Title</h1>
         </div>
 
