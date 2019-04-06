@@ -3,8 +3,7 @@ import PageIndicatorComponent from "../components/PageIndicator";
 
 const mapStateToProps = state => {
   return {
-    questions: state.questions,
-    pageNum: state.pageNum
+    questions: state.questions
   };
 };
 
