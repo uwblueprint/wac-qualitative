@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import logo from "../logo.png";
 
 import "../styles/header.css";
 import PageIndicatorContainer from "../containers/PageIndicatorContainer";
@@ -11,7 +10,7 @@ class Header extends Component {
     return (
       <div className="header-container">
         <div>
-          <img className="logo" src={logo} alt="" />
+          <img className="logo" src="/logo.png" alt="" />
         </div>
         <h2 className="text header">Dataset Bias Assessment Tool</h2>
         <p className="text subheader">
