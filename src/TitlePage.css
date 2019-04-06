@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Barlow");
+
 .body {
   font-family: "barlow";
   font-style: "normal";
@@ -8,7 +9,6 @@
   font-weight: 500;
   font-size: 25px;
   line-height: 36px;
-
   color: #000000;
 }
 
@@ -20,7 +20,6 @@
   margin-top: 5%;
   text-align: center;
   color: white;
-  /* Purple 1 */
   background: #594fd1;
   border-radius: 2px;
 }
@@ -54,11 +53,9 @@
   height: 668px;
   left: 300px;
   top: 68px;
-
   background: #ffffff;
-  /* CARD STROKE STYLE */
   border: 1px solid #e1e1e1;
-  box-sizing: border-box; /* Card drop shadow */
+  box-sizing: border-box;
   box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.07);
   border-radius: 2px;
 }
@@ -74,7 +71,6 @@
   margin-top: 8%;
   float: bottom;
   color: white;
-  /* Header Text */
   background: rgba(0, 0, 0, 0.8);
 }
 
@@ -122,9 +118,8 @@
 
 .card {
   background: #ffffff;
-  /* CARD STROKE STYLE */
   border: 1px solid #e1e1e1;
-  box-sizing: border-box; /* Card drop shadow */
+  box-sizing: border-box;
   box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.07);
   border-radius: 2px;
 }
