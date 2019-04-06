@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css?family=Barlow");
+
+.header-container {
+  min-width: 700px;
+  padding: 45px 300px 0px 300px;
+  background: #ffffff;
+  border: 1px solid #f2f2f2;
+  box-sizing: border-box;
+  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.07);
+  width: 100%;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.text {
+  text-align: left;
+  font-style: normal;
+  font-weight: 500;
+  font-family: "Barlow", sans-serif;
+  margin-bottom: 0px;
+}
+
+.subheader {
+  color: #594fd1;
+  font-size: 13px;
+  margin-top: 7px;
+  font-weight: normal;
+}
+
+.header {
+  font-size: 15px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 25px;
+  margin-top: 2px;
+}
+
+.logo {
+  position: relative;
+  width: 79px;
+  height: 30px;
+  float: right;
+  vertical-align: text-top;
+}
+
+/* Page Indicator */
+
+.indicator-container {
+  max-width: 500px;
+}
+
+.ProgressBar {
+  margin: 0 auto;
+  padding: 2.5em 0 2.5em;
+  list-style: none;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+.ProgressBar-step {
+  text-align: center;
+  position: relative;
+  width: 100%;
+}
+.ProgressBar-step:before,
+.ProgressBar-step:after {
+  content: "";
+  height: 0.35em;
+  background-color: #594fd1;
+  opacity: 0.2;
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  left: -50%;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: all 0.25s ease-out;
+}
+.ProgressBar-step:first-child:before,
+.ProgressBar-step:first-child:after {
+  display: none;
+}
+.ProgressBar-step:after {
+  background-color: #594fd1;
+  width: 0%;
+}
+.ProgressBar-step.is-complete + .ProgressBar-step.is-current:after,
+.ProgressBar-step.is-complete + .ProgressBar-step.is-complete:after {
+  opacity: 0.5;
+  width: 100%;
+}
+.ProgressBar-icon {
+  width: 0.65em;
+  height: 0.65em;
+  background-color: #f6f5fd;
+  fill: #f6f5fd;
+  border-radius: 50%;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #594fd1;
+  padding: 0.3em;
+  max-width: 100%;
+  z-index: 10;
+  position: relative;
+  transition: all 0.25s ease-out;
+}
+.is-current .ProgressBar-icon {
+  fill: #594fd1;
+  background-color: #594fd1;
+}
+.is-complete .ProgressBar-icon {
+  fill: #f6f5fd;
+  background-color: #594fd1;
+}
