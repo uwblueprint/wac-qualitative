@@ -5,7 +5,7 @@ import PageIndicatorContainer from "../containers/PageIndicatorContainer";
 
 class Header extends Component {
   render() {
-    var currentPage = "1";
+    var currentPage = this.props.pageNum;
     var totalPages = "8";
     return (
       <div className="header-container">
@@ -18,7 +18,7 @@ class Header extends Component {
         </p>
         <h1 className="text title">Progress Title</h1>
         <div className="indicator-container">
-          <PageIndicatorContainer />
+          <PageIndicatorContainer pageNum={currentPage} />
         </div>
       </div>
     );
