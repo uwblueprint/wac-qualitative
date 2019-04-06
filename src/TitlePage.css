@@ -26,6 +26,10 @@ color: #000000;
     border-radius: 2px;
 }
 
+.buttonStyle p{
+    margin-top:6%;
+}
+
 .introText{
     margin-top: 10%;
     width: 50%;
@@ -68,30 +72,51 @@ border-radius: 2px;
     top: 0px;
     display: flex;
     flex-direction: row;
-    margin-top:55%;
+    margin-top:8%;
     float: bottom;
-    
+    color:white;
     /* Header Text */
     background: rgba(0, 0, 0, 0.8);
 }
 
 .secondBottomBorder{
 position: relative;
+vertical-align: middle;
 width: 100%;
 height: 40px;
 left: 0px;
 background:#444444;
+color:white;
+padding-top:0.7%;
+}
+
+.secondBottomBorder i{
+    margin-top:15% !important;
 }
 
 .bottomTextL {
-    width: 100px;
-    margin-left: 10%;
+    width: 248px;
+    margin-left: 20%;
+    text-align:left;
+}
+
+.bottomTextL a{
+    text-decoration: none;
+    color:#594FD1;
 }
 
 .bottomTextM {
-    width: 100px; 
+    width: 248px; 
+    margin-left:5%;
+    text-align:left;
 }
 .bottomTextR {
-    width: 100px;
-    margin-right: 10%;
+    width: 248px;
+    margin-left: 5%;
+    margin-right: 20%;
+    text-align:left;
+}
+.bottomTextR a{
+    text-decoration: none;
+    color:#594FD1;
 }
