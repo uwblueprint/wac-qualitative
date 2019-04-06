@@ -1,8 +1,10 @@
-import React, { Component } from "react";
-import logo from "./styles/images/logo.png";
-import avatar from "./styles/images/personIcon.png";
-import "./App.css";
-import "./TitlePage.css";
+import React from "react";
+import { Link } from "react-router-dom";
+
+import logo from "../styles/images/logo.png";
+import avatar from "../styles/images/personIcon.png";
+import "../App.css";
+import "../styles/_title_page.css";
 
 const TitlePage = props => {
   return (
@@ -28,7 +30,9 @@ const TitlePage = props => {
           </p>
 
           <div className="buttonStyle">
-            <p>Begin</p>
+            <p>
+              <Link to={{ pathname: `/questionaire/1` }}>Begin</Link>
+            </p>
           </div>
 
           <div className="introPic">

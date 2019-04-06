@@ -28,6 +28,11 @@
   margin-top: 6%;
 }
 
+.buttonStyle a {
+  color: white;
+  text-decoration: none;
+}
+
 .introText {
   margin-top: 10%;
   width: 50%;
