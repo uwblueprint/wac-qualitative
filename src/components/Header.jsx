@@ -6,8 +6,8 @@ import PageIndicatorContainer from "../containers/PageIndicatorContainer";
 
 class Header extends Component {
   render() {
-    var currentPage = this.props.pageNum;
-    var totalPages = "8";
+    const currentPage = this.props.pageNum;
+    const totalPages = "8";
     return (
       <div className="header-container">
         <div>
