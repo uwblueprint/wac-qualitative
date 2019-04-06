@@ -119,3 +119,12 @@
   text-decoration: none;
   color: #594fd1;
 }
+
+.card {
+  background: #ffffff;
+  /* CARD STROKE STYLE */
+  border: 1px solid #e1e1e1;
+  box-sizing: border-box; /* Card drop shadow */
+  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.07);
+  border-radius: 2px;
+}
