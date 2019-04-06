@@ -3,9 +3,9 @@ import {
   BrowserRouter as Router,
   Route,
 } from 'react-router-dom';
+
 import Intro from './components/Intro.jsx';
 import Questionaire from './components/Questionaire.jsx';
-import './App.css';
 
 class App extends Component {
   render() {
