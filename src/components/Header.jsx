@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import logo from "../logo.png";
+
 import "../styles/header.css";
 import PageIndicatorContainer from "../containers/PageIndicatorContainer";
 

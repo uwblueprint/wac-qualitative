@@ -1,4 +1,5 @@
 import { connect } from "react-redux";
+
 import PageIndicatorComponent from "../components/PageIndicator";
 
 const mapStateToProps = state => {
