@@ -4,9 +4,9 @@ import { questions } from "../reducers/questionsReducer";
 import { pageNum } from "../reducers/pageNumReducer";
 
 const reducers = combineReducers({
-  count: count,
-  questions: questions,
-  pageNum: pageNum
+  count,
+  questions,
+  pageNum
 });
 
 export default reducers;
