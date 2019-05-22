@@ -1,0 +1,49 @@
+.optionButton {
+  background-color: lightgray;
+  border: solid #594fd1;
+  border-width: 1px;
+  height: 80px;
+  width: 354px;
+  padding: 0;
+  padding-top: 15px;
+  margin: 0;
+}
+
+.optionLabelDiv {
+  padding: 0;
+  vertical-align: top;
+}
+
+.optionSvg {
+  position: relative;
+  float: left;
+  width: 36px;
+  height: 24px;
+  vertical-align: top;
+}
+
+.purpleRectangle {
+  height: 100%;
+  width: 100%;
+  fill: #312975;
+}
+
+.optionLabelText {
+  position: relative;
+  fill: #ffffff;
+  text-anchor: middle;
+}
+
+.optionTextDiv {
+  padding: 0;
+  height: 100%;
+  vertical-align: top;
+}
+
+.optionText {
+  text-align: left;
+  padding-left: 13px;
+  width: 292px;
+  height: 100%;
+  float: left;
+}
