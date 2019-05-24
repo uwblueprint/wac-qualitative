@@ -1,17 +1,17 @@
 import React, { Component } from "react";
-import logo from "../logo.png";
+import logo from '../../public/images/logo.png';
 
 import "../styles/header.css";
 import PageIndicatorContainer from "../containers/PageIndicatorContainer";
 
 class Header extends Component {
   render() {
-    var currentPage = this.props.pageNum;
-    var totalPages = "8";
+    const currentPage = this.props.pageNum;
+    const totalPages = "8";
     return (
       <div className="header-container">
         <div>
-          <img className="logo" src={logo} alt="" />
+          <img className="logo" src={logo} alt="Logo" />
         </div>
         <h2 className="text header">Dataset Bias Assessment Tool</h2>
         <p className="text subheader">
