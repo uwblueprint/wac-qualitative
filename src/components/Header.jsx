@@ -7,19 +7,11 @@ import PageIndicatorContainer from "../containers/PageIndicatorContainer";
 class Header extends Component {
   render() {
     const currentPage = this.props.pageNum;
-    const summary = this.props.summary;
-
     const totalPages = "8";
-
-    if (summary) {
-      return (
-        <div className="header-container summary-header">
-          <div>
-            <img className="logo" src={`/${logo}`} alt="Logo" />
-          </div>
-          <h2 className="text header">Dataset Bias Assessment Tool</h2>
-          <h1 className="text title"> Summary of Results </h1>
-          {/* <br></br> */}
+    return (
+      <div className="header-container">
+        <div>
+          <img className="logo" src={`/${logo}`} alt="Logo" />
         </div>
       );
     } else {
