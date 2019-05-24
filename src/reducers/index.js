@@ -8,6 +8,7 @@ const reducers = storage.reducer(combineReducers({
   count: count,
   questions: questions,
   pageNum: pageNum
+
 }));
 
 export default reducers;
