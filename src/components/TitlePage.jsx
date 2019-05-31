@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import logo from "../styles/images/logo.png";
-import avatar from "../styles/images/personIcon.png";
+import logo from "../../public/images/largeLogo.png";
+import avatar from "../../public/images/personIcon.png";
 import "../App.css";
 import "../styles/_title_page.css";
 
