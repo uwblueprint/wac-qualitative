@@ -51,16 +51,16 @@
     }, {
       "question": {
         "id": 4,
-        "title": "Was the person asking the questions of a higher status than the respondent, lower status than the respondent or same status?"
+        "title": "Was the person asking the questions of a higher social status than the respondent, lower social status than the respondent or same social status?"
       },
       "options": [{
-        "title": "Person asking question was usually higher status",
+        "title": "Person asking question was usually higher social status",
         "score": 3
       }, {
-        "title": "Person asking question was usually same status",
+        "title": "Person asking question was usually same social status",
         "score": 1
       }, {
-        "title": "Person asking question was usually lower status",
+        "title": "Person asking question was usually lower social status",
         "score": 3
       }, {
         "title": "Unsure",
@@ -247,7 +247,7 @@
       }, {
         "question": {
           "id": 14,
-          "title": "How was the household status question asked?"
+          "title": "How was the head of household status question asked?"
         },
         "options": [{
             "title": "One question. Closed, on who is the head of the household",
@@ -319,7 +319,7 @@
       {
         "question": {
           "id": 17,
-          "title": "Were any questions were answered by the enumerator rather than directly by the respondents"
+          "title": "Were any questions answered by the enumerator rather than directly by the respondents"
         },
         "options": [{
           "title": "Yes, one questions was answered by the enumerators only",
@@ -414,7 +414,7 @@
     }, {
       "question": {
         "id": 21,
-        "title": "Is the place where the data was collected a place that raises or diminishes the respondent’s status?"
+        "title": "Is the place where the data was collected a place that raises or diminishes the respondent’s social status?"
       },
       "options": [{
         "title": "Location that raises respondents status",
@@ -505,7 +505,7 @@
     }, {
       "question": {
         "id": 25,
-        "title": "What level of ownership are the data producers being given?"
+        "title": "What level of ownership are the data producers (the survey respondents) being given?"
       },
       "options": [{
         "title": "Respondents are given full access to the entire dataset",
@@ -529,7 +529,7 @@
     }, {
       "question": {
         "id": 26,
-        "title": "What type of results are given to the data respondents?"
+        "title": "What type of results are given to the data producers (the survey respondents)?"
       },
       "options": [{
         "title": "Respondents are given their personal results from the survey",
@@ -641,7 +641,7 @@
     }, {
       "question": {
         "id": 31,
-        "title": "Is there an political advantage (to data collectors) to the numbers skewing in a particular direction?"
+        "title": "Is there a political advantage (to data collectors) to the numbers skewing in a particular direction?"
       },
       "options": [{
         "title": "Yes, strongly",
@@ -659,7 +659,7 @@
     }, {
       "question": {
         "id": 32,
-        "title": "Is there an personal advantage (to data collectors) to the numbers skewing in a particular direction?"
+        "title": "Is there a personal advantage (to data collectors) to the numbers skewing in a particular direction?"
       },
       "options": [{
         "title": "Yes, strongly",
@@ -695,7 +695,7 @@
     }, {
       "question": {
         "id": 34,
-        "title": "Is there an political advantage (to respondents) to the numbers skewing in a particular direction?"
+        "title": "Is there a political advantage (to respondents) to the numbers skewing in a particular direction?"
       },
       "options": [{
         "title": "Yes, strongly",
@@ -713,7 +713,7 @@
     }, {
       "question": {
         "id": 35,
-        "title": "Is there an personal advantage (to respondents) to the numbers skewing in a particular direction?"
+        "title": "Is there a personal advantage (to respondents) to the numbers skewing in a particular direction?"
       },
       "options": [{
         "title": "Yes, strongly",
@@ -731,7 +731,7 @@
     }, {
       "question": {
         "id": 36,
-        "title": "Is this data collected in connection with eligibility for a benefit?"
+        "title": "Is this data collected in connection with eligibility for a benefit, service, or participation in a project?"
       },
       "options": [{
         "title": "Yes",
@@ -761,14 +761,14 @@
     }, {
       "question": {
         "id": 38,
-        "title": "Is this data collected by an NGO?"
+        "title": "Is this data collected by a non-profit organization?"
       },
       "options": [{
         "title": "Yes",
-        "score": 3
+        "score": 1
       }, {
         "title": "No",
-        "score": 1
+        "score": 3
       }, {
         "title": "Unsure",
         "score": 99
