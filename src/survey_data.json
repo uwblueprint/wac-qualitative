@@ -2,7 +2,7 @@
     "section": "Who asked the questions (Data collectors)",
     "questions": [{
       "question": {
-        "id": 1.1,
+        "id": 1,
         "title": "Was the person asking the questions a professionally trained enumerator?"
       },
       "options": [{
@@ -17,7 +17,7 @@
       }]
     }, {
       "question": {
-        "id": 1.2,
+        "id": 2,
         "title": "Was the person asking the questions a potential friend or neighbour?"
       },
       "options": [{
@@ -32,7 +32,7 @@
       }]
     }, {
       "question": {
-        "id": 1.3,
+        "id": 3,
         "title": "What the person collecting the questions the same gender as the respondent?"
       },
       "options": [{
@@ -50,7 +50,7 @@
       }]
     }, {
       "question": {
-        "id": 1.4,
+        "id": 4,
         "title": "Was the person asking the questions of a higher status than the respondent, lower status than the respondent or same status?"
       },
       "options": [{
@@ -71,7 +71,7 @@
     "section": "Who answered the questions (Data respondents)",
     "questions": [{
       "question": {
-        "id": 2.1,
+        "id": 5,
         "title": "Who was present during the data collection other than the respondent?"
       },
       "options": [{
@@ -89,7 +89,7 @@
       }]
     }, {
       "question": {
-        "id": 2.2,
+        "id": 6,
         "title": "How were respondents selected?"
       },
       "options": [{
@@ -119,7 +119,7 @@
       }]
     }, {
       "question": {
-        "id": 2.3,
+        "id": 7,
         "title": "Were selected respondents followed-up with repeatedly until they answered?"
       },
       "options": [{
@@ -137,7 +137,7 @@
       }]
     }, {
       "question": {
-        "id": 2.4,
+        "id": 8,
         "title": "Were respondents selected based on the data collector’s choices?"
       },
       "options": [{
@@ -155,8 +155,8 @@
       }]
     }, {
       "question": {
-        "id": 2.5,
-        "title": "Were respondents selected based on the data collector’s choices?"
+        "id": 9,
+        "title": "Were respondents selected based on their external characteristics?"
       },
       "options": [{
         "title": "Yes",
@@ -173,7 +173,7 @@
     "section": "Who did not answer the questions",
     "questions": [{
       "question": {
-        "id": 3.1,
+        "id": 10,
         "title": "Does the data include a record of respondents who declined to participate?"
       },
       "options": [{
@@ -188,11 +188,12 @@
       }]
     }, {
       "question": {
-        "id": 3.2,
+        "id": 11,
         "title": "Were groups of people intentionally not included? "
       },
       "options": [{
-        "title": "For example, those living in institutions or those living in jail; or those not home at the time of data collection",
+        "title": "Yes",
+        "subtitle": "For example, those living in institutions or those living in jail; or those not home at the time of data collection",
         "score": 3
       }, {
         "title": "No one was intentionally not included",
@@ -203,7 +204,7 @@
       }]
     }, {
       "question": {
-        "id": 3.3,
+        "id": 12,
         "title": "What groups of people were accidentally not included?"
       },
       "options": [{
@@ -224,7 +225,7 @@
     "section": "What questions were asked?",
     "questions": [{
         "question": {
-          "id": 4.1,
+          "id": 13,
           "title": "In what format was the gender question asked?"
         },
         "options": [{
@@ -245,7 +246,7 @@
         }]
       }, {
         "question": {
-          "id": 4.2,
+          "id": 14,
           "title": "How was the household status question asked?"
         },
         "options": [{
@@ -273,7 +274,7 @@
       },
       {
         "question": {
-          "id": 4.3,
+          "id": 15,
           "title": "How was the marriage/partnership question asked?"
         },
         "options": [{
@@ -295,7 +296,7 @@
       },
       {
         "question": {
-          "id": 4.4,
+          "id": 16,
           "title": "How was the work question asked?"
         },
         "options": [{
@@ -317,7 +318,7 @@
       },
       {
         "question": {
-          "id": 4.5,
+          "id": 17,
           "title": "Were any questions were answered by the enumerator rather than directly by the respondents"
         },
         "options": [{
@@ -336,15 +337,16 @@
       },
       {
         "question": {
-          "id": 4.6,
+          "id": 18,
           "title": "Do the skip patterns used introduce potential bias?"
         },
-
         "options": [{
           "title": "Yes, definitely",
+          "subtitle": "For example, if someone replies that their sexual orientation is homosexual, do they get skipped in asking about parenthood.",
           "score": 3
         }, {
-          "title": "Yes, probably",
+          "title": "Yes, possibly",
+          "subtitle": "For example, do people over a certain age get skipped for questions about current employment.",
           "score": 2
         }, {
           "title": "No",
@@ -359,86 +361,503 @@
   {
     "section": "Where",
     "questions": [{
-      "question": "Where was the data collected?",
-      "options": ["Public Space", "Private Space", "Homes", "Government Office", "Program/Service Location", "Unsure"]
+      "question": {
+        "id": 19,
+        "title": "Where was the data collected?"
+      },
+      "options": [{
+        "title": "Public Space",
+        "score": 2
+      }, {
+        "title": "Private Space",
+        "score": 1
+      }, {
+        "title": "Homes",
+        "score": 1
+      }, {
+        "title": "Government Office",
+        "score": 3
+      }, {
+        "title": "Program/Service Location",
+        "score": 3
+      }, {
+        "title": "Unsure",
+        "score": 99
+      }]
     }, {
-      "question": "Who has access to the final data?",
-      "options": ["Only the data collection organization has access to the data", "The data collection organization and the data respondents have access to the data", "The data collection organization and several other organizations have access to the data", "The data collection organization and the data respondents and several other organizations have access to the data", "The public has access to the data", "Other", "Unsure"]
+      "question": {
+        "id": 20,
+        "title": "Who has access to the final data?"
+      },
+      "options": [{
+        "title": "Only the data collection organization has access to the data",
+        "score": 3
+      }, {
+        "title": "The data collection organization and the data respondents have access to the data",
+        "score": 2
+      }, {
+        "title": "The data collection organization and several other organizations have access to the data",
+        "score": 3
+      }, {
+        "title": "The data collection organization and the data respondents and several other organizations have access to the data",
+        "score": 2
+      }, {
+        "title": "The public has access to the data",
+        "score": 1
+      }, {
+        "title": "Other",
+        "score": 99
+      }, {
+        "title": "Unsure",
+        "score": 99
+      }]
     }, {
-      "question": "Is the place where the data was collected a place that raises or diminishes the respondent’s status?",
-      "options": ["Location that raises respondents status", "Location that lowers the respondent’s status", "Combination", "Data collected online", "Unsure"]
+      "question": {
+        "id": 21,
+        "title": "Is the place where the data was collected a place that raises or diminishes the respondent’s status?"
+      },
+      "options": [{
+        "title": "Location that raises respondents status",
+        "score": 1
+      }, {
+        "title": "Location that lowers the respondent’s status",
+        "score": 3
+      }, {
+        "title": "Combination",
+        "score": 2
+      }, {
+        "title": "Data collected online",
+        "score": 2
+      }, {
+        "title": "Unsure",
+        "score": 99
+      }]
     }]
   },
   {
     "section": "Where",
     "questions": [{
-      "question": "What tools/technology was used to collect the data?",
-      "options": ["Pencil and Paper", "Tablets", "Remotely collected", "Combination", "Unsure"]
+      "question": {
+        "id": 22,
+        "title": "What tools/technology was used to collect the data?"
+      },
+      "options": [{
+        "title": "Pencil and Paper",
+        "score": 1
+      }, {
+        "title": "Tablets",
+        "score": 1
+      }, {
+        "title": "Remotely collected",
+        "score": 1
+      }, {
+        "title": "Combination",
+        "score": 1
+      }, {
+        "title": "Unsure",
+        "score": 99
+      }]
     }, {
-      "question": "How were the options coded?",
-      "options": ["Dataset contains the raw options", "Dataset contains options that have been coded by others", "Unsure"]
+      "question": {
+        "id": 23,
+        "title": "How were the answers coded?"
+      },
+      "options": [{
+        "title": "Dataset contains the raw options",
+        "score": 1
+      }, {
+        "title": "Dataset contains options that have been coded by others",
+        "subtitle": "For example, age has been coded into five broad groups of age cohorts.",
+        "score": 2
+      }, {
+        "title": "Unsure",
+        "score": 99
+      }]
     }, {
-      "question": "What incentivization was offered for data collection?",
-      "options": ["No external incentive was offered to data responders", "Data responders were given financial payment (cash or money transfer) for participation", "Data responders were given non-financial resources (like cell phone minutes or a gift card) for participation", "Data responders were given access to information for participation", "Data responders were given access to services for participation", "Other", "Unsure"]
+      "question": {
+        "id": 24,
+        "title": "What incentivization was offered for data collection?"
+      },
+      "options": [{
+        "title": "No external incentive was offered to data responders",
+        "score": 1
+      }, {
+        "title": "Data responders were given financial payment (cash or money transfer) for participation",
+        "score": 1
+      }, {
+        "title": "Data responders were given non-financial resources (like cell phone minutes or a gift card) for participation",
+        "score": 1
+      }, {
+        "title": "Data responders were given access to information for participation",
+        "subtitle": "For example, access to a paper, or access to learning session.",
+        "score": 2
+      }, {
+        "title": "Data responders were given access to services for participation",
+        "subtitle": "For example, admission to a program.",
+        "score": 3
+      }, {
+        "title": "Other",
+        "score": 99
+      }, {
+        "title": "Unsure",
+        "score": 99
+      }]
     }, {
-      "question": "What level of ownership are the data producers being given?",
-      "options": ["Respondents are given full access to the entire dataset", "Respondents are given full access to their data but cannot make change", "Respondents are given full access to their data with possibility to change or remove it", "Respondents are given no access to any part of the data", "Other", "Unsure"]
+      "question": {
+        "id": 25,
+        "title": "What level of ownership are the data producers being given?"
+      },
+      "options": [{
+        "title": "Respondents are given full access to the entire dataset",
+        "score": 1
+      }, {
+        "title": "Respondents are given full access to their data but cannot make change",
+        "score": 2
+      }, {
+        "title": "Respondents are given full access to their data with possibility to change or remove it",
+        "score": 1
+      }, {
+        "title": "Respondents are given no access to any part of the data",
+        "score": 3
+      }, {
+        "title": "Other",
+        "score": 99
+      }, {
+        "title": "Unsure",
+        "score": 99
+      }]
     }, {
-      "question": "What type of results are given to the data respondents?",
-      "options": ["Respondents are given their personal results from the survey", "Respondents are given their personal results and the overall results from the survey", "Respondents are given only the overall results from the survey", "Respondents are given no access to data or results", "Unsure"]
+      "question": {
+        "id": 26,
+        "title": "What type of results are given to the data respondents?"
+      },
+      "options": [{
+        "title": "Respondents are given their personal results from the survey",
+        "score": 1
+      }, {
+        "title": "Respondents are given their personal results and the overall results from the survey",
+        "score": 1
+      }, {
+        "title": "Respondents are given only the overall results from the survey",
+        "score": 2
+      }, {
+        "title": "Respondents are given no access to data or results",
+        "score": 3
+      }, {
+        "title": "Unsure",
+        "score": 99
+      }]
     }, {
-      "question": "Was any part of this data taken from administrative databases?",
-      "options": ["Yes", "No", "Unsure"]
+      "question": {
+        "id": 27,
+        "title": "Was any part of this data taken from administrative databases?"
+      },
+      "options": [{
+        "title": "Yes",
+        "score": 3
+      }, {
+        "title": "No",
+        "score": 1
+      }, {
+        "title": "Unsure",
+        "score": 99
+      }]
     }]
   },
   {
     "section": "Why",
     "questions": [{
-      "question": "What is the primary data collection purpose?",
-      "options": ["Program evaluation", "Government services", "Eligibility determination for a benefit", "Commercial purposes", "User experience or service design analysis", "Academic research purposes", "Unsure"]
+      "question": {
+        "id": 28,
+        "title": "What is the primary data collection purpose?"
+      },
+      "options": [{
+        "title": "Program evaluation",
+        "score": 2
+      }, {
+        "title": "Government services",
+        "score": 2
+      }, {
+        "title": "Eligibility determination for a benefit",
+        "score": 3
+      }, {
+        "title": "Commercial purposes",
+        "score": 1
+      }, {
+        "title": "User experience or service design analysis",
+        "score": 1
+      }, {
+        "title": "Academic research purposes",
+        "score": 2
+      }, {
+        "title": "Unsure",
+        "score": 99
+      }]
     }, {
-      "question": "What is the secondary data collection purpose?",
-      "options": ["Program evaluation", "Government services", "Eligibility determination for a benefit", "Commercial purposes", "User experience or service design analysis", "Academic research purposes", "Unsure"]
+      "question": {
+        "id": 29,
+        "title": "What is the secondary data collection purpose?"
+      },
+      "options": [{
+        "title": "Program evaluation",
+        "score": 2
+      }, {
+        "title": "Government services",
+        "score": 2
+      }, {
+        "title": "Eligibility determination for a benefit",
+        "score": 3
+      }, {
+        "title": "Commercial purposes",
+        "score": 1
+      }, {
+        "title": "User experience or service design analysis",
+        "score": 1
+      }, {
+        "title": "Academic research purposes",
+        "score": 2
+      }, {
+        "title": "Unsure",
+        "score": 99
+      }]
     }, {
-      "question": "Is there an economic advantage (to data collectors) to the numbers skewing in a particular direction?",
-      "options": ["Yes, strongly", "Yes, a small amount", "No", "Unsure"]
+      "question": {
+        "id": 30,
+        "title": "Is there an economic advantage (to data collectors) to the numbers skewing in a particular direction?"
+      },
+      "options": [{
+        "title": "Yes, strongly",
+        "score": 3
+      }, {
+        "title": "Yes, a small amount",
+        "score": 2
+      }, {
+        "title": "No",
+        "score": 1
+      }, {
+        "title": "Unsure",
+        "score": 99
+      }]
     }, {
-      "question": "Is there an political advantage (to data collectors) to the numbers skewing in a particular direction?",
-      "options": ["Yes, strongly", "Yes, a small amount", "No", "Unsure"]
+      "question": {
+        "id": 31,
+        "title": "Is there an political advantage (to data collectors) to the numbers skewing in a particular direction?"
+      },
+      "options": [{
+        "title": "Yes, strongly",
+        "score": 3
+      }, {
+        "title": "Yes, a small amount",
+        "score": 2
+      }, {
+        "title": "No",
+        "score": 1
+      }, {
+        "title": "Unsure",
+        "score": 99
+      }]
     }, {
-      "question": "Is there an personal advantage (to data collectors) to the numbers skewing in a particular direction?",
-      "options": ["Yes, strongly", "Yes, a small amount", "No", "Unsure"]
+      "question": {
+        "id": 32,
+        "title": "Is there an personal advantage (to data collectors) to the numbers skewing in a particular direction?"
+      },
+      "options": [{
+        "title": "Yes, strongly",
+        "score": 3
+      }, {
+        "title": "Yes, a small amount",
+        "score": 2
+      }, {
+        "title": "No",
+        "score": 1
+      }, {
+        "title": "Unsure",
+        "score": 99
+      }]
     }, {
-      "question": "Is there an economic advantage (to respondents) to the numbers skewing in a particular direction?",
-      "options": ["Yes, strongly", "Yes, a small amount", "No", "Unsure"]
+      "question": {
+        "id": 33,
+        "title": "Is there an economic advantage (to respondents) to the numbers skewing in a particular direction?"
+      },
+      "options": [{
+        "title": "Yes, strongly",
+        "score": 3
+      }, {
+        "title": "Yes, a small amount",
+        "score": 2
+      }, {
+        "title": "No",
+        "score": 1
+      }, {
+        "title": "Unsure",
+        "score": 99
+      }]
     }, {
-      "question": "Is there an political advantage (to respondents) to the numbers skewing in a particular direction?",
-      "options": ["Yes, strongly", "Yes, a small amount", "No", "Unsure"]
+      "question": {
+        "id": 34,
+        "title": "Is there an political advantage (to respondents) to the numbers skewing in a particular direction?"
+      },
+      "options": [{
+        "title": "Yes, strongly",
+        "score": 3
+      }, {
+        "title": "Yes, a small amount",
+        "score": 2
+      }, {
+        "title": "No",
+        "score": 1
+      }, {
+        "title": "Unsure",
+        "score": 99
+      }]
     }, {
-      "question": "Is there an personal advantage (to respondents) to the numbers skewing in a particular direction?",
-      "options": ["Yes, strongly", "Yes, a small amount", "No", "Unsure"]
+      "question": {
+        "id": 35,
+        "title": "Is there an personal advantage (to respondents) to the numbers skewing in a particular direction?"
+      },
+      "options": [{
+        "title": "Yes, strongly",
+        "score": 3
+      }, {
+        "title": "Yes, a small amount",
+        "score": 2
+      }, {
+        "title": "No",
+        "score": 1
+      }, {
+        "title": "Unsure",
+        "score": 99
+      }]
     }, {
-      "question": "Is this data collected in connection with eligibility for a benefit?",
-      "options": ["Yes", "No", "Unsure"]
+      "question": {
+        "id": 36,
+        "title": "Is this data collected in connection with eligibility for a benefit?"
+      },
+      "options": [{
+        "title": "Yes",
+        "score": 2
+      }, {
+        "title": "No",
+        "score": 1
+      }, {
+        "title": "Unsure",
+        "score": 99
+      }]
     }, {
-      "question": "Is this data collected with a blinding process?",
-      "options": ["Yes", "No", "Unsure"]
+      "question": {
+        "id": 37,
+        "title": "Is this data collected by the government?"
+      },
+      "options": [{
+        "title": "Yes",
+        "score": 1
+      }, {
+        "title": "No",
+        "score": 3
+      }, {
+        "title": "Unsure",
+        "score": 99
+      }]
     }, {
-      "question": "Is this data collected with informed consent?",
-      "options": ["Yes, clearly", "Yes, but weakly", "No", "Unsure"]
+      "question": {
+        "id": 38,
+        "title": "Is this data collected by an NGO?"
+      },
+      "options": [{
+        "title": "Yes",
+        "score": 3
+      }, {
+        "title": "No",
+        "score": 1
+      }, {
+        "title": "Unsure",
+        "score": 99
+      }]
+    }, {
+      "question": {
+        "id": 39,
+        "title": "Is this data collected with a blinding process?"
+      },
+      "options": [{
+        "title": "Yes",
+        "score": 1
+      }, {
+        "title": "No",
+        "score": 3
+      }, {
+        "title": "Unsure",
+        "score": 99
+      }]
+    }, {
+      "question": {
+        "id": 40,
+        "title": "Is this data collected with informed consent?"
+      },
+      "options": [{
+        "title": "Yes, clearly",
+        "score": 1
+      }, {
+        "title": "Yes, but weakly",
+        "score": 2
+      }, {
+        "title": "No",
+        "score": 3
+      }, {
+        "title": "Unsure",
+        "score": 99
+      }]
     }]
   },
   {
     "section": "Data Post Processing Phase",
     "questions": [{
-      "question": "Has the data been cleaned?",
-      "options": ["Yes", "No", "Unsure"]
+      "question": {
+        "id": 41,
+        "title": "Has the data been cleaned?"
+      },
+      "options": [{
+        "title": "Yes",
+        "score": 1
+      }, {
+        "title": "No",
+        "score": 1
+      }, {
+        "title": "Unsure",
+        "score": 99
+      }]
     }, {
-      "question": "Have anomalies or outliers been accounted for or removed?",
-      "options": ["Yes", "No", "Unsure"]
+      "question": {
+        "id": 42,
+        "title": "Have anomalies or outliers been accounted for or removed?"
+      },
+      "options": [{
+        "title": "Yes",
+        "score": 3
+      }, {
+        "title": "No",
+        "score": 1
+      }, {
+        "title": "Unsure",
+        "score": 99
+      }]
     }, {
-      "question": "Has missing data been deleted?",
-      "options": ["Yes, questions with lots of missing data were deleted", "Yes, any respondent without totally complete data was deleted", "No", "Unsure"]
+      "question": {
+        "id": 43,
+        "title": "Has missing data been deleted?"
+      },
+      "options": [{
+        "title": "Yes, questions with lots of missing data were deleted",
+        "score": 3
+      }, {
+        "title": "Yes, any respondent without totally complete data was deleted",
+        "score": 3
+      }, {
+        "title": "No",
+        "score": 1
+      }, {
+        "title": "Unsure",
+        "score": 99
+      }]
     }]
   }
 ]
