@@ -5,6 +5,8 @@ import Questionaire from "./components/Questionaire.jsx";
 import TitlePage from "./components/TitlePage";
 import OptionButton from "./OptionButton.jsx";
 
+import SummaryPage from "./components/SummaryPage";
+
 class App extends Component {
   render() {
     return (
@@ -19,6 +21,7 @@ class App extends Component {
             }
           }) => <Questionaire pageNum={parseInt(pageNum)} />}
         />
+      <Route exact path={'/summary'} component={SummaryPage}/>
       </Router>
     );
   }

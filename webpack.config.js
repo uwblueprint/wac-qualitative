@@ -6,7 +6,11 @@ module.exports = {
   devServer: {
     contentBase: path.join(__dirname, "dist"),
     compress: true,
-    port: 3000
+    port: 3000,
+    // webpack routing fix to add new routes in App.js
+    // see hhttps://bit.ly/2wwnRxZ for a further explanation
+    publicPath: '/',
+    historyApiFallback: true
   },
   entry: path.resolve(__dirname, "./src/index.js"),
   module: {
@@ -44,6 +48,11 @@ module.exports = {
     filename: "bundle.js",
     chunkFilename: "[name].js"
   },
+  // output: {
+  //   path: path.resolve(__dirname, 'dist'),
+  //   filename: 'js/[name].min.js',
+  //   publicPath: '/'
+  // },
   plugins: [
     new MiniCssExtractPlugin({
       filename: "style.css"
