@@ -355,6 +355,22 @@
           "title": "Unsure",
           "score": 99
         }]
+      },
+      {
+        "question": {
+          "id": 19,
+          "title": "Do you have a detailed codebook for each variable you are using?"
+        },
+        "options": [{
+          "title": "Yes",
+          "score": 1
+        }, {
+          "title": "No",
+          "score": 3
+        }, {
+          "title": "Unsure",
+          "score": 99
+        }]
       }
     ]
   },
