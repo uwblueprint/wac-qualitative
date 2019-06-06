@@ -7,7 +7,7 @@ jobs:
   build:
     docker:
       # specify the version you desire here
-      - image: circleci/node:6.9.0
+      - image: circleci/node:10.16
 
         # Specify service dependencies here if necessary
         # CircleCI maintains a library of pre-built images
@@ -32,6 +32,3 @@ jobs:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
-
-      # run tests!
-      - run: yarn test
