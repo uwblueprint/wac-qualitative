@@ -44,9 +44,10 @@ module.exports = {
     ]
   },
   output: {
-    path: __dirname + "/dist",
+    path: path.resolve(__dirname + "/dist"),
     filename: "bundle.js",
     chunkFilename: "[name].js"
+    // publicPath: '/assets'
   },
   // output: {
   //   path: path.resolve(__dirname, 'dist'),
