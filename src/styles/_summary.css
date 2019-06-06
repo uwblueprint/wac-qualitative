@@ -1,22 +1,20 @@
-.cardStyle {
-    position: relative;
-    width: 60%;
-    height: 300px;
-    left: 300px;
-    top: 68px;
-    background: #ffffff;
-    border: 1px solid #e1e1e1;
-    box-sizing: border-box;
-    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.07);
-    border-radius: 2px;
+.box-container {
+    padding: 10px;
+}
+
+.boxboxbox {
+    padding-left: 40px;
+    margin-bottom: 10px;
 }
 
 .figmaCard {
-    position: absolute;
+    display: flex;
+    align-items: center;
+    position: relative;
     width: 840px;
     height: 113px;
-    left: 300px;
-    top: 172px;
+    left: 280px;
+    top: 10px;
 
     background: #FFFFFF;
     /* CARD STROKE STYLE */
@@ -27,17 +25,9 @@
 
     box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.07);
     border-radius: 5px;
-}
 
-
-.sectionTitle{
-    font-family: Barlow;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 23px;
-    padding: 10px;
-    color: #000000;
+    margin: 20px 0px 20px 0px;
+    
 }
 
 .sectionNum{
@@ -47,10 +37,24 @@
     font-weight: normal;
     font-size: 13px;
     line-height: 18px;
+
     /* identical to box height */
 
 
     /* Purple 1 */
 
     color: #594FD1;
+}
+
+.sectionTitle {
+    font-family: Barlow;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 23px;
+
+
+    margin-top: -7px;
+
+    color: #000000;
 }

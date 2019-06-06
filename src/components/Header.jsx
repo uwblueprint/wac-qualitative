@@ -13,12 +13,13 @@ class Header extends Component {
 
     if (summary) {
       return (
-        <div className="header-container">
+        <div className="header-container summary-header">
           <div>
             <img className="logo" src={`/${logo}`} alt="Logo" />
           </div>
           <h2 className="text header">Dataset Bias Assessment Tool</h2>
           <h1 className="text title"> Summary of Results </h1>
+          {/* <br></br> */}
         </div>
       );
     } else {
@@ -29,7 +30,7 @@ class Header extends Component {
           </div>
           <h2 className="text header">Dataset Bias Assessment Tool</h2>
           <p className="text subheader">
-            Section {currentPage}/{totalPages}
+            Section {currentPage+1}/{totalPages}
           </p>
           <h1 className="text title">Progress Title</h1>
           <div className="indicator-container">
