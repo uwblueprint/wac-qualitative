@@ -6,8 +6,28 @@ import QuestionCard from "./QuestionCard";
 
 var survey = require("../survey_data.json")
 
-// TODO: Replace this with the actual questionaire component
+
+
 class Questionaire extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      answers: {}
+    }
+  }
+
+  selectAnswer(id, title, score) {
+    this.setState(state => ({
+      answers: {
+        ...state.answers,
+        [id]: {
+          title: title,
+          score: score,
+        }
+      }
+    }))
+  }
+
   render() {
     const surveyPage = survey[this.props.pageNum-1];
     return (
@@ -15,7 +35,10 @@ class Questionaire extends Component {
         <Header pageNum={this.props.pageNum} />
           {surveyPage.questions.map((el) => {
             return (
-              <QuestionCard question={el.question} options={el.options}>
+              <QuestionCard key={el.question.id}
+                handleClick={(this.selectAnswer.bind(this))}
+                answer={this.state.answers[el.question.id]}
+                question={el.question} options={el.options}>
               </QuestionCard>
             )
           })}

@@ -56,9 +56,22 @@
     width: 354px;
     height: 80px;
     margin-bottom: 10px;
+    cursor: pointer;
 
     background: #FFFFFF;
     border: 1px solid rgba(89, 79, 209, 0.4);
+    box-sizing: border-box;
+    border-radius: 2px;
+}
+
+.selectedAnswer {
+    position: relative;
+    width: 354px;
+    height: 80px;
+    margin-bottom: 10px;
+
+    background: #F6F5FD;
+    border: 1px solid #594FD1;
     box-sizing: border-box;
     border-radius: 2px;
 }
@@ -70,6 +83,15 @@
     height: 24px;
 
     background: #594FD1;
+}
+
+.selectedLetterOption {
+    position: absolute;
+    top: 15px;
+    width: 36px;
+    height: 24px;
+
+    background: #312975;
 }
 
 .letter {
@@ -85,10 +107,6 @@
     text-align: center;
     color: #FFFFFF;
     opacity: 0.8;
-}
-
-.column {
-    float: left;
 }
 
 .answerText {
