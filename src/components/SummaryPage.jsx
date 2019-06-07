@@ -7,15 +7,15 @@ import SummaryBox from "./SummaryBox";
 import "../styles/_summary.css";
 
 const questions = [
-  { id: 1, title: "question 1"},
-  { id: 2, title: "question 2"},
-  { id: 3, title: "lmao 3"},
-  { id: 4, title: "lmao 4" },
-
+  { id: 1, title: "question 1", val: 0 },
+  { id: 2, title: "question 2", val: 1 },
+  { id: 3, title: "lmao 3", val: 2 },
+  { id: 4, title: "lmao 4", val: 1 },
+  { id: 5, title: "lmao 5", val: 0 }
 ];
 
 const box = questions.map((question) =>
-  <SummaryBox sectionNumber={question.id} sectionTitle={question.title} />
+  <SummaryBox sectionNumber={question.id} sectionTitle={question.title} val={question.val}/>
 );
 
 class SummaryPage extends Component {
