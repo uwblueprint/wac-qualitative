@@ -55,8 +55,6 @@
     height: fill;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
-    /* margin-left: 10%; */
-    /* background: #594FD1; */
 }
 
 .outer-circle{
@@ -67,7 +65,7 @@
     width: 25px;
     height: 25px;
     border-radius: 50%;
-    background: #594FD1;
+    background: #818181;
 }
 
 .inner-circle{

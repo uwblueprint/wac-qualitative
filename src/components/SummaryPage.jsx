@@ -26,7 +26,7 @@ class SummaryPage extends Component {
         <div className="box-container">
           {box}
         </div>
-      </div>      
+      </div>   
     );
   }
 }
