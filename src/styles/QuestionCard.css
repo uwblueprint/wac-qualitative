@@ -1,0 +1,105 @@
+
+.questionNumber {
+    width: 556px;
+    height: 18px;
+    margin-bottom: 2px;
+
+    font-family: Barlow;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 18px;
+
+    color: #594FD1;
+}
+
+.card {
+    width: 840px;
+    height: 318px;
+    padding-top: 35px;
+    padding-left: 60px;
+
+    background: #FFFFFF;
+    border: 1px solid #E1E1E1;
+    box-sizing: border-box;
+
+    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.07);
+    border-radius: 5px;
+
+    margin: auto;
+}
+
+.title {
+    width: 656px;
+    height: 30px;
+    margin-bottom: 30px;
+
+    font-family: Barlow;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 26px;
+
+    color: #000000;
+    opacity: 0.8;
+}
+
+.answer {
+    position: relative;
+    width: 354px;
+    height: 80px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+
+    background: #FFFFFF;
+    border: 1px solid rgba(89, 79, 209, 0.4);
+    box-sizing: border-box;
+    border-radius: 2px;
+}
+
+.letterOption {
+    position: absolute;
+    top: 15px;
+    width: 36px;
+    height: 24px;
+
+    background: #594FD1;
+}
+
+.letter {
+    width: 9.75px;
+    height: 26.64px;
+    margin: auto;
+
+    font-family: Barlow;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 22px;
+    text-align: center;
+    color: #FFFFFF;
+    opacity: 0.8;
+}
+
+.column {
+    float: left;
+}
+
+.answerText {
+    position: absolute;
+    width: 287.11px;
+    height: 50.59px;
+    top: 17.86px;
+    left: 49.22px;
+
+    /* Body */
+    font-family: Barlow;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 21px;
+
+    color: #202020;
+
+    opacity: 0.7;
+}
