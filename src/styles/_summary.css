@@ -133,12 +133,16 @@
 
 .red-c {
     color: #D24B5A;
+    font-weight: 600;
+
 }
 .yellow-c {
     color: #FAB437;
+    font-weight: 600;
 }
 .green-c {
     color: #419949;
+    font-weight: 600;
 }
 .red-b {
     background: #D24B5A;
