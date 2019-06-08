@@ -12,7 +12,6 @@ class SummaryBox extends Component {
     const sectionNumber = this.props.sectionNumber;
     const val = this.props.val;
 
-    // YES
     return (
       <div className="figmaCard">
         <div className="boxboxbox">
@@ -44,6 +43,7 @@ class SummaryBox extends Component {
         <div id="rectangle" className={`${val == 0 ? 'red-b' : `${val == 1 ? 'yellow-b' : 'green-b'}`}`} />
       </div>
     );
+
   }
 }
 
