@@ -8,9 +8,9 @@ module.exports = {
     compress: true,
     port: 3000,
     // webpack routing fix to add new routes in App.js
-    // see hhttps://bit.ly/2wwnRxZ for a further explanation
+    // see https://bit.ly/2wwnRxZ for a further explanation
     publicPath: '/',
-    historyApiFallback: true
+    historyApiFallback: true,
   },
   entry: path.resolve(__dirname, "./src/index.js"),
   module: {
@@ -44,7 +44,7 @@ module.exports = {
     ]
   },
   output: {
-    path: __dirname + "/dist",
+    path: __dirname + '/dist',
     filename: "bundle.js",
     chunkFilename: "[name].js"
   },
