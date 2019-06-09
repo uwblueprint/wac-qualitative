@@ -31,5 +31,6 @@ const ProgressIndicator = ({ pageNum, sections }) => (
 export default ProgressIndicator;
 
 ProgressIndicator.propTypes = {
-	pageNum: PropTypes.number
-}
+	pageNum: PropTypes.number,
+	sections: PropTypes.array,
+};
