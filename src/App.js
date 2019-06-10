@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
-import Questionaire from "./components/Questionaire.jsx";
+import Questionnaire from "./components/Questionnaire.jsx";
 import TitlePage from "./components/TitlePage";
-import OptionButton from "./OptionButton.jsx";
 
 import SummaryPage from "./components/SummaryPage";
 
@@ -12,16 +11,8 @@ class App extends Component {
     return (
       <Router>
         <Route exact path={`/`} component={TitlePage} />
-        <Route
-          exact
-          path={`/questionaire/:pageNum`}
-          render={({
-            match: {
-              params: { pageNum }
-            }
-          }) => <Questionaire pageNum={parseInt(pageNum)} />}
-        />
-      <Route exact path={'/summary'} component={SummaryPage}/>
+        <Route exact path={`/questionnaire`} component={Questionnaire} />
+        <Route exact path={'/summary'} component={SummaryPage}/>
       </Router>
     );
   }
