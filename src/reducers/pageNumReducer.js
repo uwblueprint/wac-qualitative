@@ -1,7 +1,11 @@
-import * as types from "../types";
+import { INCREMENT_PAGE_NUM, DECREMENT_PAGE_NUM } from '../types';
 
-export const pageNum = (state = null, action) => {
+export default (state = 0, action) => {
   switch (action.type) {
+    case INCREMENT_PAGE_NUM:
+      return state + 1;
+    case DECREMENT_PAGE_NUM:
+      return state - 1;
     default:
       return state;
   }

@@ -355,6 +355,22 @@
           "title": "Unsure",
           "score": 99
         }]
+      },
+      {
+        "question": {
+          "id": 19,
+          "title": "Do you have a detailed codebook for each variable you are using?"
+        },
+        "options": [{
+          "title": "Yes",
+          "score": 1
+        }, {
+          "title": "No",
+          "score": 3
+        }, {
+          "title": "Unsure",
+          "score": 99
+        }]
       }
     ]
   },
@@ -362,7 +378,7 @@
     "section": "Where",
     "questions": [{
       "question": {
-        "id": 19,
+        "id": 20,
         "title": "Where was the data collected?"
       },
       "options": [{
@@ -386,7 +402,7 @@
       }]
     }, {
       "question": {
-        "id": 20,
+        "id": 21,
         "title": "Who has access to the final data?"
       },
       "options": [{
@@ -413,7 +429,7 @@
       }]
     }, {
       "question": {
-        "id": 21,
+        "id": 22,
         "title": "Is the place where the data was collected a place that raises or diminishes the respondent’s social status?"
       },
       "options": [{
@@ -438,7 +454,7 @@
     "section": "Where",
     "questions": [{
       "question": {
-        "id": 22,
+        "id": 23,
         "title": "What tools/technology was used to collect the data?"
       },
       "options": [{
@@ -459,7 +475,7 @@
       }]
     }, {
       "question": {
-        "id": 23,
+        "id": 24,
         "title": "How were the answers coded?"
       },
       "options": [{
@@ -475,7 +491,7 @@
       }]
     }, {
       "question": {
-        "id": 24,
+        "id": 25,
         "title": "What incentivization was offered for data collection?"
       },
       "options": [{
@@ -504,7 +520,7 @@
       }]
     }, {
       "question": {
-        "id": 25,
+        "id": 26,
         "title": "What level of ownership are the data producers (the survey respondents) being given?"
       },
       "options": [{
@@ -528,7 +544,7 @@
       }]
     }, {
       "question": {
-        "id": 26,
+        "id": 27,
         "title": "What type of results are given to the data producers (the survey respondents)?"
       },
       "options": [{
@@ -549,7 +565,7 @@
       }]
     }, {
       "question": {
-        "id": 27,
+        "id": 28,
         "title": "Was any part of this data taken from administrative databases?"
       },
       "options": [{
@@ -568,7 +584,7 @@
     "section": "Why",
     "questions": [{
       "question": {
-        "id": 28,
+        "id": 29,
         "title": "What is the primary data collection purpose?"
       },
       "options": [{
@@ -595,7 +611,7 @@
       }]
     }, {
       "question": {
-        "id": 29,
+        "id": 30,
         "title": "What is the secondary data collection purpose?"
       },
       "options": [{
@@ -622,7 +638,7 @@
       }]
     }, {
       "question": {
-        "id": 30,
+        "id": 31,
         "title": "Is there an economic advantage (to data collectors) to the numbers skewing in a particular direction?"
       },
       "options": [{
@@ -640,7 +656,7 @@
       }]
     }, {
       "question": {
-        "id": 31,
+        "id": 32,
         "title": "Is there a political advantage (to data collectors) to the numbers skewing in a particular direction?"
       },
       "options": [{
@@ -658,7 +674,7 @@
       }]
     }, {
       "question": {
-        "id": 32,
+        "id": 33,
         "title": "Is there a personal advantage (to data collectors) to the numbers skewing in a particular direction?"
       },
       "options": [{
@@ -676,7 +692,7 @@
       }]
     }, {
       "question": {
-        "id": 33,
+        "id": 34,
         "title": "Is there an economic advantage (to respondents) to the numbers skewing in a particular direction?"
       },
       "options": [{
@@ -694,7 +710,7 @@
       }]
     }, {
       "question": {
-        "id": 34,
+        "id": 35,
         "title": "Is there a political advantage (to respondents) to the numbers skewing in a particular direction?"
       },
       "options": [{
@@ -712,7 +728,7 @@
       }]
     }, {
       "question": {
-        "id": 35,
+        "id": 36,
         "title": "Is there a personal advantage (to respondents) to the numbers skewing in a particular direction?"
       },
       "options": [{
@@ -730,7 +746,7 @@
       }]
     }, {
       "question": {
-        "id": 36,
+        "id": 37,
         "title": "Is this data collected in connection with eligibility for a benefit, service, or participation in a project?"
       },
       "options": [{
@@ -745,7 +761,7 @@
       }]
     }, {
       "question": {
-        "id": 37,
+        "id": 38,
         "title": "Is this data collected by the government?"
       },
       "options": [{
@@ -760,7 +776,7 @@
       }]
     }, {
       "question": {
-        "id": 38,
+        "id": 39,
         "title": "Is this data collected by a non-profit organization?"
       },
       "options": [{
@@ -775,7 +791,7 @@
       }]
     }, {
       "question": {
-        "id": 39,
+        "id": 40,
         "title": "Is this data collected with a blinding process?"
       },
       "options": [{
@@ -790,7 +806,7 @@
       }]
     }, {
       "question": {
-        "id": 40,
+        "id": 41,
         "title": "Is this data collected with informed consent?"
       },
       "options": [{
@@ -812,7 +828,7 @@
     "section": "Data Post Processing Phase",
     "questions": [{
       "question": {
-        "id": 41,
+        "id": 42,
         "title": "Has the data been cleaned?"
       },
       "options": [{
@@ -827,7 +843,7 @@
       }]
     }, {
       "question": {
-        "id": 42,
+        "id": 43,
         "title": "Have anomalies or outliers been accounted for or removed?"
       },
       "options": [{
@@ -842,7 +858,7 @@
       }]
     }, {
       "question": {
-        "id": 43,
+        "id": 44,
         "title": "Has missing data been deleted?"
       },
       "options": [{

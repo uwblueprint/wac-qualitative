@@ -1,0 +1,157 @@
+.box-container {
+    padding: 10px;
+}
+
+.boxboxbox {
+    position: absolute;
+    /* margin-top: 2.5%; */
+    align-self: center;
+    left: 0%;
+    padding-left: 40px;
+    margin-bottom: 10px;
+}
+
+.figmaCard {
+    display: flex;
+    justify-content: flex-end;
+    align-items: stretch;
+    position: relative;
+    width: 840px;
+    height: 113px;
+    left: 280px;
+    top: 10px;
+
+    background: #FFFFFF;
+    /* CARD STROKE STYLE */
+
+    border: 1px solid #E1E1E1;
+    box-sizing: border-box;
+    /* Card drop shadow */
+
+    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.07);
+    border-radius: 5px;
+
+    margin: 20px 0px 20px 0px;
+    
+}
+
+#bar {
+    position: absolute;
+    width: 210px;
+    height: 0px;
+    border: 1.5px solid #000000;
+
+    background: #594FD1;
+    /* margin-right: 300%; */
+    margin-left: -13%;
+    align-self: center;
+    margin-top: -0.5%;
+    opacity: 0.2;
+}
+#rectangle{
+    position: relative;
+    box-align: right;
+    width: 10px;
+    height: fill;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.outer-circle{
+    align-self: center;
+    margin-top: -1%;
+    margin-right: 10%;
+    position: relative;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #818181;
+}
+
+.inner-circle{
+    position: absolute;
+    width: 60%;
+    height: 60%;
+    border-radius: 50%;
+    background: #FFFFFF;
+    top: 20%;
+    left: 20%;
+}
+
+#circle-left-text {
+    margin-left: -50%;
+}
+#circle-center-text {
+    margin-left: -260%;
+}
+#circle-right-text {
+    margin-left: -125%;
+}
+.circle-text {
+    font-family: Barlow;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 17px;
+    font-weight: 450;
+    margin-top: 150%;
+    /* margin-left: -50%; */
+    white-space: nowrap;
+    /* text-align: center; */
+    position: relative;
+    /* identical to box height */
+
+    /* Scale grey */
+    color: #818181;
+}
+
+.sectionNum{
+    /* Subtext */
+    font-family: Barlow;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 18px;
+
+    /* identical to box height */
+
+    /* Purple 1 */
+
+    color: #594FD1;
+}
+.sectionTitle {
+    font-family: Barlow;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 23px;
+
+    margin-top: -7px;
+
+    color: #000000;
+}
+
+.red-c {
+    color: #D24B5A;
+    font-weight: 600;
+
+}
+.yellow-c {
+    color: #FAB437;
+    font-weight: 600;
+}
+.green-c {
+    color: #419949;
+    font-weight: 600;
+}
+.red-b {
+    background: #D24B5A;
+}
+
+.yellow-b {
+    background: #FAB437;
+}
+
+.green-b {
+    background: #419949;
+}

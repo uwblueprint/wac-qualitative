@@ -8,7 +8,7 @@ import * as storage from 'redux-storage'
 
 import './index.css';
 import App from './App';
-import reducers from './reducers/index.js';
+import reducers from './reducers';
 import * as serviceWorker from './serviceWorker';
 import initialStore from './initialStore';
 
@@ -22,8 +22,7 @@ const store = createStore(
     composeEnhancers(applyMiddleware(...middleware))
 );
 
-const load = storage.createLoader(engine);
-load(store);
+storage.createLoader(engine)(store);
 
 ReactDOM.render(
     <Provider store={store}>
