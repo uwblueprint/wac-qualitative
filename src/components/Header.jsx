@@ -8,13 +8,6 @@ class Header extends Component {
   render() {
     const currentPage = this.props.pageNum;
     const totalPages = "8";
-    return (
-      <div className="header-container">
-        <div>
-          <img className="logo" src={`/${logo}`} alt="Logo" />
-        </div>
-      );
-    } else {
       return (
         <div className="header-container">
           <div>
@@ -32,5 +25,4 @@ class Header extends Component {
       );
     }
   }
-}
 export default Header;

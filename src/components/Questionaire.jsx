@@ -21,8 +21,8 @@ class Questionaire extends Component {
       answers: {
         ...state.answers,
         [id]: {
-          title: title,
-          score: score,
+          title,
+          score,
         }
       }
     }))

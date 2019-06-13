@@ -9,6 +9,7 @@ class QuestionCard extends Component {
       <div className="card">
         <div className="questionNumber">Question {this.props.question.id}</div>
         <div className="title">{this.props.question.title}</div>
+        <div className="grid-container">
         {this.props.options.map((opt, index) => {
           if (this.props.answer && this.props.answer.title === opt.title) {
             return (
@@ -25,8 +26,11 @@ class QuestionCard extends Component {
             )
           }
           return (
-              <div className="answer"  key={opt.title} 
-                onClick={() => this.props.handleClick(this.props.question.id, opt.title, opt.score)}>
+              <div 
+                className="answer"  
+                key={opt.title} 
+                onClick={() => this.props.handleClick(this.props.question.id, opt.title, opt.score)}
+              >
                 <div className="letterOption">
                   <div className="letter">
                     {letterOptions[index]}
@@ -38,6 +42,7 @@ class QuestionCard extends Component {
               </div>
           )
         })}
+        </div>
       </div>
     );
   }
