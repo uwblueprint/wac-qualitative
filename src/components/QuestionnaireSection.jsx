@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import QuestionCard from './QuestionCard';
 
 import sections from '../survey_data.json';
 
@@ -24,10 +25,11 @@ class QuestionnaireSection extends React.Component {
 	}
 
 	render() {
+    const section = sections[this.props.pageNum];
 		return (
 			<div>
 				<h1>Section {this.props.pageNum}</h1>
-				{surveyPage.questions.map(el => {
+				{section.questions.map(el => {
 					return (
 						<QuestionCard
 							key={el.question.id}
