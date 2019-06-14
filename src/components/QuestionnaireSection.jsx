@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import QuestionCard from './QuestionCard';
 
 import sections from '../survey_data.json';
@@ -29,11 +30,21 @@ class QuestionnaireSection extends React.Component {
 		this.props.updateAnswers(answers, this.props.pageNum);
 	}
 
+	handleNext() {
+		const answers = Object.values(this.state.answers);
+		this.setState({ answers: [] });
+		this.props.updateAnswers(answers, this.props.pageNum);
+
+		if (this.props.pageNum < sections.length - 1) {
+			this.props.incrementPageNum();
+		}
+	}
+
 	render() {
 		const section = sections[this.props.pageNum];
 		return (
 			<div>
-				<h1>Section {this.props.pageNum}</h1>
+				<h1>Section {this.props.pageNum + 1}</h1>
 				{section.questions.map(el => {
 					return (
 						<QuestionCard
@@ -45,8 +56,14 @@ class QuestionnaireSection extends React.Component {
 						/>
 					);
 				})}
-				<button onClick={this.props.decrementPageNum}>prev</button>
-				<button onClick={this.props.incrementPageNum}>next</button>
+				{this.props.pageNum > 0 && <button onClick={this.props.decrementPageNum}>prev</button>}
+				<button onClick={this.handleNext.bind(this)}>
+					{this.props.pageNum < sections.length - 1 ? (
+						'next'
+					) : (
+						<Link to={{ pathname: `/summary` }}>finish</Link>
+					)}
+				</button>
 			</div>
 		);
 	}

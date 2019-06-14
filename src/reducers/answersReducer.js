@@ -1,8 +1,11 @@
 import {
-  UPDATE_ANSWERS
+  UPDATE_ANSWERS,
+  RESET_DATA
 } from '../types';
 
-export default (state = [], action) => {
+const defaultState = []
+
+export default (state = defaultState, action) => {
   switch (action.type) {
     case UPDATE_ANSWERS:
       return [
@@ -10,6 +13,8 @@ export default (state = [], action) => {
         action.answers,
         ...state.slice(action.sectionNum + 1),
       ]
+    case RESET_DATA:
+      return defaultState;
     default:
       return state;
   }

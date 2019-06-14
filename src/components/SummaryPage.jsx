@@ -1,4 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import SummaryBox from './SummaryBox';
 
 import logo from '../../public/images/logo.png';
@@ -6,35 +8,45 @@ import '../styles/_summary.css';
 import '../styles/header.css';
 import Footer from './Footer';
 
-const questions = [
-	{ id: 1, title: 'question 1', val: 0 },
-	{ id: 2, title: 'question 2', val: 1 },
-	{ id: 3, title: 'lmao 3', val: 2 },
-	{ id: 4, title: 'lmao 4', val: 1 },
-	{ id: 5, title: 'lmao 5', val: 0 },
-];
+class SummaryPage extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			results: [],
+		};
+	}
 
-class SummaryPage extends Component {
 	render() {
+		const results = this.props.answers.map(section => {
+			// remove unsures
+			const filteredSection = section.filter(q => q.score < 99);
+			const sectionAverage =
+				filteredSection.reduce((sum, q) => sum + q.score, 0) / filteredSection.length;
+			return {
+				title: section.section,
+				value: sectionAverage,
+			};
+		});
 		return (
 			<div>
-				<div>
-					<div className="header-container summary-header">
-						<div>
-							<img className="logo" src={`/${logo}`} alt="Logo" />
-						</div>
-						<h2 className="text header">Dataset Bias Assessment Tool</h2>
-						<h1 className="text title"> Summary of Results </h1>
+				<div className="header-container summary-header">
+					<div>
+						<img className="logo" src={`/${logo}`} alt="Logo" />
 					</div>
-					<div className="box-container">
-						{questions.map(question => (
+					<h2 className="text header">Dataset Bias Assessment Tool</h2>
+					<h1 className="text title"> Summary of Results </h1>
+				</div>
+				<div className="box-container">
+					{results.map((section, sectionNum) => {
+						return (
 							<SummaryBox
-								sectionNumber={question.id}
-								sectionTitle={question.title}
-								sectionValue={question.val}
+								sectionNumber={sectionNum + 1}
+								sectionTitle={section.title}
+								sectionValue={section.value}
 							/>
-						))}
-					</div>
+						);
+					})}
+					<Link to={{ pathname: `/questionnaire` }}>Back</Link>
 				</div>
 				<Footer />
 			</div>
@@ -43,3 +55,18 @@ class SummaryPage extends Component {
 }
 
 export default SummaryPage;
+
+SummaryPage.propTypes = {
+	answers: PropTypes.arrayOf(
+		PropTypes.arrayOf(
+			PropTypes.shape({
+				title: PropTypes.string,
+				score: PropTypes.number,
+			}),
+		),
+	),
+};
+
+SummaryPage.defaultProps = {
+	answers: [],
+};
