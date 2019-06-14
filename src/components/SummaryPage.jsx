@@ -4,6 +4,7 @@ import SummaryBox from './SummaryBox';
 import logo from '../../public/images/logo.png';
 import '../styles/_summary.css';
 import '../styles/header.css';
+import Footer from './Footer';
 
 const questions = [
 	{ id: 1, title: 'question 1', val: 0 },
@@ -17,22 +18,25 @@ class SummaryPage extends Component {
 	render() {
 		return (
 			<div>
-				<div className="header-container summary-header">
-					<div>
-						<img className="logo" src={`/${logo}`} alt="Logo" />
+				<div>
+					<div className="header-container summary-header">
+						<div>
+							<img className="logo" src={`/${logo}`} alt="Logo" />
+						</div>
+						<h2 className="text header">Dataset Bias Assessment Tool</h2>
+						<h1 className="text title"> Summary of Results </h1>
 					</div>
-					<h2 className="text header">Dataset Bias Assessment Tool</h2>
-					<h1 className="text title"> Summary of Results </h1>
+					<div className="box-container">
+						{questions.map(question => (
+							<SummaryBox
+								sectionNumber={question.id}
+								sectionTitle={question.title}
+								sectionValue={question.val}
+							/>
+						))}
+					</div>
 				</div>
-				<div className="box-container">
-					{questions.map(question => (
-						<SummaryBox
-							sectionNumber={question.id}
-							sectionTitle={question.title}
-							sectionValue={question.val}
-						/>
-					))}
-				</div>
+				<Footer />
 			</div>
 		);
 	}
