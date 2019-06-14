@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { incrementPageNum, decrementPageNum } from '../actions';
+import { incrementPageNum, decrementPageNum, updateAnswers } from '../actions';
 import QuestionnaireSection from '../components/QuestionnaireSection';
 
 const mapStateToProps = state => {
@@ -9,11 +9,12 @@ const mapStateToProps = state => {
 	};
 };
 
-const mapDispatchToProps = dispatch =>
+const mapDispatchToProps = (dispatch) =>
 	bindActionCreators(
 		{
 			incrementPageNum,
 			decrementPageNum,
+			updateAnswers,
 		},
 		dispatch,
 	);

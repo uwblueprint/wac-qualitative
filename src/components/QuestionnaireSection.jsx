@@ -8,27 +8,32 @@ class QuestionnaireSection extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-      answers: {}
-    };
-  }
-  
-  selectAnswer(id, title, score) {
+			answers: {},
+		};
+	}
+
+	selectAnswer(id, title, score) {
 		this.setState(state => ({
 			answers: {
 				...state.answers,
 				[id]: {
 					title,
 					score,
-				}
-			}
-		}))
-	}
+				},
+			},
+		}));
+  }
+  
+  submitAnswers() {
+    const answers = Object.values(this.state.answers)
+    this.props.updateAnswers(answers, this.props.pageNum);
+  }
 
 	render() {
-    const section = sections[this.props.pageNum];
+		const section = sections[this.props.pageNum];
 		return (
 			<div>
-				<h1>Section {this.props.pageNum}</h1>
+				<h1 onClick={this.submitAnswers.bind(this)}>Section {this.props.pageNum}</h1>
 				{section.questions.map(el => {
 					return (
 						<QuestionCard
@@ -49,4 +54,7 @@ export default QuestionnaireSection;
 
 QuestionnaireSection.propTypes = {
 	pageNum: PropTypes.number,
+	incrementPageNum: PropTypes.func,
+	decrementPageNum: PropTypes.func,
+	updateAnswers: PropTypes.func,
 };
