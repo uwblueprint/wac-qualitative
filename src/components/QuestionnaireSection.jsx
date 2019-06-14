@@ -25,17 +25,13 @@ class QuestionnaireSection extends React.Component {
 		}));
 	}
 
-	submitAnswers() {
-		const answers = Object.values(this.state.answers);
-		this.props.updateAnswers(answers, this.props.pageNum);
-	}
-
 	handleNext() {
 		const answers = Object.values(this.state.answers);
 		this.setState({ answers: [] });
 		this.props.updateAnswers(answers, this.props.pageNum);
 
 		if (this.props.pageNum < sections.length - 1) {
+			window.scrollTo({ top: 0, behavior: 'smooth' });
 			this.props.incrementPageNum();
 		}
 	}
