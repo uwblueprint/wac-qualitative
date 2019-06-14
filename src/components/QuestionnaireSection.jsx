@@ -26,9 +26,7 @@ class QuestionnaireSection extends React.Component {
 	}
 
 	handleNext() {
-		const answers = Object.values(this.state.answers);
-		this.setState({ answers: [] });
-		this.props.updateAnswers(answers, this.props.pageNum);
+    this.props.updateAnswers(this.state.answers);
 
 		if (this.props.pageNum < sections.length - 1) {
 			window.scrollTo({ top: 0, behavior: 'smooth' });

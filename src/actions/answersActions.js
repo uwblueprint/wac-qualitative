@@ -3,9 +3,8 @@ import {
   RESET_DATA,
 } from '../types';
 
-export const updateAnswers = (answers, sectionNum) => ({
+export const updateAnswers = (answers) => ({
   type: UPDATE_ANSWERS,
-  sectionNum,
   answers,
 });
 
