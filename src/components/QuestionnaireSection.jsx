@@ -22,18 +22,18 @@ class QuestionnaireSection extends React.Component {
 				},
 			},
 		}));
-  }
-  
-  submitAnswers() {
-    const answers = Object.values(this.state.answers)
-    this.props.updateAnswers(answers, this.props.pageNum);
-  }
+	}
+
+	submitAnswers() {
+		const answers = Object.values(this.state.answers);
+		this.props.updateAnswers(answers, this.props.pageNum);
+	}
 
 	render() {
 		const section = sections[this.props.pageNum];
 		return (
 			<div>
-				<h1 onClick={this.submitAnswers.bind(this)}>Section {this.props.pageNum}</h1>
+				<h1>Section {this.props.pageNum}</h1>
 				{section.questions.map(el => {
 					return (
 						<QuestionCard
@@ -45,6 +45,8 @@ class QuestionnaireSection extends React.Component {
 						/>
 					);
 				})}
+				<button onClick={this.props.decrementPageNum}>prev</button>
+				<button onClick={this.props.incrementPageNum}>next</button>
 			</div>
 		);
 	}
