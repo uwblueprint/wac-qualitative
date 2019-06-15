@@ -1,10 +1,11 @@
 button {
   box-sizing: border-box;
   border-radius: 2px;
+  border: 1px solid #594FD1;
   padding: 14px 30px;
   min-width: 135px;
   /* Body */
-
+  
   font-family: Barlow;
   font-style: normal;
   font-weight: normal;
@@ -17,6 +18,11 @@ button {
 
   transition: all 0.2s;
   outline: none;
+}
+
+button a {
+  text-decoration: none;
+  color: inherit;
 }
 
 button:hover {
@@ -33,7 +39,6 @@ button.primary:hover {
 }
 
 button.secondary {
-  border: 1px solid #594FD1;
   color: #594FD1;
 }
 

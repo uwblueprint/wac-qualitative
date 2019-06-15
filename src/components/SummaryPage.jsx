@@ -64,10 +64,14 @@ class SummaryPage extends React.Component {
 							sectionValue={section.value}
 						/>
 					))}
-					<button>
-						<Link to={{ pathname: `/questionnaire` }}>Back</Link>
-					</button>
-					<button onClick={() => exportCSV(getSummary(this.props.answers))}>Save Results</button>
+					<div className="buttonContainer">
+						<button className="secondary">
+							<Link to={{ pathname: `/` }}>Start New</Link>
+						</button>
+						<button onClick={() => exportCSV(getSummary(this.props.answers))} className="primary">
+							Save Results
+						</button>
+					</div>
 				</div>
 				<Footer />
 			</div>

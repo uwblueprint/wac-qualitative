@@ -1,6 +1,6 @@
 .questionSection {
   margin: 32px auto;
-  width: 840px;
+  max-width: 840px;
 }
 
 .questionContainer {
@@ -14,11 +14,7 @@
 }
 
 .buttonContainer {
-  margin-top: 24px;
+  margin-top: 36px;
   display: flex;
   justify-content: space-between;
-}
-
-.buttonContainer a {
-  text-decoration: none;
 }

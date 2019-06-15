@@ -89,7 +89,7 @@ class QuestionnaireSection extends React.Component {
 						{this.props.pageNum < sections.length - 1 ? (
 							'next'
 						) : (
-							<Link to={{ pathname: `/summary` }}>finish</Link>
+							<Link to={{ pathname: `/summary` }}>submit</Link>
 						)}
 					</button>
 				</div>
