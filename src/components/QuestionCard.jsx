@@ -1,51 +1,51 @@
-import React, { Component } from "react";
-import "../styles/QuestionCard.css"
+import React from 'react';
+import PropTypes from 'prop-types';
 
-const letterOptions = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K']
+import '../styles/QuestionCard.css';
 
-class QuestionCard extends Component {
-  render() {
-    return (
-      <div className="card">
-        <div className="questionNumber">Question {this.props.question.id}</div>
-        <div className="title">{this.props.question.title}</div>
-        <div className="grid-container">
-        {this.props.options.map((opt, index) => {
-          if (this.props.answer && this.props.answer.title === opt.title) {
-            return (
-                <div className="selectedAnswer" key={opt.title}>
-                  <div className="selectedLetterOption">
-                    <div className="letter">
-                      {letterOptions[index]}
-                    </div>
-                  </div>
-                  <div className="answerText">
-                    {opt.title}
-                  </div>
-                </div>
-            )
-          }
-          return (
-              <div 
-                className="answer"  
-                key={opt.title} 
-                onClick={() => this.props.handleClick(this.props.question.id, opt.title, opt.score)}
-              >
-                <div className="letterOption">
-                  <div className="letter">
-                    {letterOptions[index]}
-                  </div>
-                </div>
-                <div className="answerText">
-                  {opt.title}
-                </div>
-              </div>
-          )
-        })}
-        </div>
-      </div>
-    );
-  }
-}
-  
-  export default QuestionCard;
+const ALPHABET = 'abcdefghijklmnopqrstuvwxyz';
+
+const QuestionCard = ({ id, question, answer, options, handleClick }) => (
+	<div className="card" id={id}>
+    <div className="errorMessage">Please answer this question.</div>
+		<div className="questionNumber">Question {question.id}</div>
+		<div className="title">{question.title}</div>
+		<div className="grid-container">
+			{options.map((opt, i) => {
+				const letter = ALPHABET.charAt(i).toUpperCase();
+				if (answer && answer.title === opt.title) {
+					return (
+						<div className="selectedAnswer" key={i}>
+							<div className="selectedLetterOption">
+								<div className="letter">{letter}</div>
+							</div>
+							<div className="answerText">{opt.title}</div>
+						</div>
+					);
+				}
+				return (
+					<div
+						key={i}
+						className="answer"
+						onClick={() => handleClick(question.id, opt.title, opt.score)}
+					>
+						<div className="letterOption">
+							<div className="letter">{letter}</div>
+						</div>
+						<div className="answerText">{opt.title}</div>
+					</div>
+				);
+			})}
+		</div>
+	</div>
+);
+
+export default QuestionCard;
+
+QuestionCard.propTypes = {
+	id: PropTypes.string,
+	handleClick: PropTypes.func,
+	question: PropTypes.shape({ id: PropTypes.number, title: PropTypes.string }),
+	answer: PropTypes.shape({ title: PropTypes.string, score: PropTypes.number }),
+	options: PropTypes.arrayOf(PropTypes.shape({ title: PropTypes.string, score: PropTypes.number })),
+};

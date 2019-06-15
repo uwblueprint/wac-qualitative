@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import QuestionCard from './QuestionCard';
 
 import sections from '../survey_data.json';
+import '../styles/QuestionnaireSection.css';
+import '../styles/_buttons.css';
 
 class QuestionnaireSection extends React.Component {
 	constructor(props) {
@@ -11,6 +13,14 @@ class QuestionnaireSection extends React.Component {
 		this.state = {
 			answers: {},
 		};
+
+		this.selectAnswer = this.selectAnswer.bind(this);
+		this.handleNext = this.handleNext.bind(this);
+		this.handlePrev = this.handlePrev.bind(this);
+	}
+
+	getQuestionCard(id) {
+		return document.getElementById('question-' + id);
 	}
 
 	selectAnswer(id, title, score) {
@@ -23,10 +33,31 @@ class QuestionnaireSection extends React.Component {
 				},
 			},
 		}));
+		this.getQuestionCard(id).classList.remove('error');
+	}
+
+	handlePrev() {
+		if (this.props.pageNum > 0) {
+			window.scrollTo({ top: 0, behavior: 'smooth' });
+			this.props.decrementPageNum();
+		}
 	}
 
 	handleNext() {
-    this.props.updateAnswers(this.state.answers);
+		const { questions } = sections[this.props.pageNum];
+		const unansweredQuestions = questions.filter(
+			({ question }) => !this.state.answers[question.id],
+		);
+
+		if (unansweredQuestions.length) {
+      const unansweredQuestionEls = unansweredQuestions.map(({ question }) => this.getQuestionCard(question.id))
+			unansweredQuestionEls.forEach(el => el.classList.add('error'));
+			unansweredQuestionEls[0].scrollIntoView({ behavior: 'smooth' });
+			unansweredQuestionEls[0].focus();
+			return;
+		}
+
+		this.props.updateAnswers(this.state.answers);
 
 		if (this.props.pageNum < sections.length - 1) {
 			window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -37,27 +68,31 @@ class QuestionnaireSection extends React.Component {
 	render() {
 		const section = sections[this.props.pageNum];
 		return (
-			<div>
-				<h1>Section {this.props.pageNum + 1}</h1>
-				{section.questions.map(el => {
-					return (
+			<div className="questionSection">
+				<div className="questionContainer">
+					{section.questions.map(({ question, options }) => (
 						<QuestionCard
-							key={el.question.id}
-							handleClick={this.selectAnswer.bind(this)}
-							answer={this.state.answers[el.question.id]}
-							question={el.question}
-							options={el.options}
+							id={'question-' + question.id}
+							key={question.id}
+							handleClick={this.selectAnswer}
+							answer={this.state.answers[question.id]}
+							question={question}
+							options={options}
 						/>
-					);
-				})}
-				{this.props.pageNum > 0 && <button onClick={this.props.decrementPageNum}>prev</button>}
-				<button onClick={this.handleNext.bind(this)}>
-					{this.props.pageNum < sections.length - 1 ? (
-						'next'
-					) : (
-						<Link to={{ pathname: `/summary` }}>finish</Link>
-					)}
-				</button>
+					))}
+				</div>
+				<div className="buttonContainer">
+					<button className="secondary" onClick={this.handlePrev}>
+						{this.props.pageNum > 0 ? 'prev' : <Link to={{ pathname: '/' }}>previous</Link>}
+					</button>
+					<button className="primary" onClick={this.handleNext}>
+						{this.props.pageNum < sections.length - 1 ? (
+							'next'
+						) : (
+							<Link to={{ pathname: `/summary` }}>finish</Link>
+						)}
+					</button>
+				</div>
 			</div>
 		);
 	}

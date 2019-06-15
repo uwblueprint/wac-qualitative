@@ -1,0 +1,24 @@
+.questionSection {
+  margin: 32px auto;
+  width: 840px;
+}
+
+.questionContainer {
+  background: white;
+  border: 1px solid #E1E1E1;
+  box-sizing: border-box;
+  /* Card drop shadow */
+
+  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.07);
+  border-radius: 8px;
+}
+
+.buttonContainer {
+  margin-top: 24px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.buttonContainer a {
+  text-decoration: none;
+}
