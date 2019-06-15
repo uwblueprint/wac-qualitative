@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import SummaryBox from './SummaryBox';
 import { exportCSV } from '../actions';
 import sections from '../survey_data.json';
@@ -15,8 +15,9 @@ const getResults = answers =>
 		const sectionAnswers = section.questions
 			.map(({ question }) => answers[question.id])
 			.filter(answer => answer && answer.score && answer.score < 99);
-		const sectionAverage =
-			sectionAnswers.reduce((sum, a) => sum + a.score, 0) / sectionAnswers.length;
+		const sectionAverage = sectionAnswers.length
+			? sectionAnswers.reduce((sum, a) => sum + a.score, 0) / sectionAnswers.length
+			: 3;
 		return {
 			title: section.section,
 			value: sectionAverage,
@@ -25,9 +26,9 @@ const getResults = answers =>
 
 const getSummary = answers =>
 	sections.reduce(
-		(summary, section) =>
+		(summary, { questions }) =>
 			summary.concat(
-				section.questions.map(({ question }) => ({
+				questions.map(({ question }) => ({
 					question: question.title,
 					answer: (answers[question.id] || {}).title,
 				})),
@@ -36,6 +37,15 @@ const getSummary = answers =>
 	);
 
 class SummaryPage extends React.Component {
+	componentDidUpdate() {
+		const totalAnswers = Object.values(this.props.answers).length;
+		const totalQuestions = sections.reduce((total, section) => total.concat(section.questions), [])
+			.length;
+		if (totalAnswers > 0 && totalAnswers < totalQuestions) {
+			this.props.history.push('/questionnaire');
+		}
+	}
+
 	render() {
 		return (
 			<div>
@@ -47,19 +57,22 @@ class SummaryPage extends React.Component {
 					<h1 className="text title"> Summary of Results </h1>
 				</div>
 				<div className="box-container">
-					{getResults(this.props.answers).map((section, sectionNum) => {
-						return (
-							<SummaryBox
-								sectionNumber={sectionNum + 1}
-								sectionTitle={section.title}
-								sectionValue={section.value}
-							/>
-						);
-					})}
-					<button>
-						<Link to={{ pathname: `/questionnaire` }}>Back</Link>
-					</button>
-					<button onClick={() => exportCSV(getSummary(this.props.answers))}>Save Results</button>
+					{getResults(this.props.answers).map((section, sectionNum) => (
+						<SummaryBox
+							key={sectionNum}
+							sectionNumber={sectionNum + 1}
+							sectionTitle={section.title}
+							sectionValue={section.value}
+						/>
+					))}
+					<div className="buttonContainer">
+						<button className="secondary">
+							<Link to={{ pathname: `/` }}>Start New</Link>
+						</button>
+						<button onClick={() => exportCSV(getSummary(this.props.answers))} className="primary">
+							Save Results
+						</button>
+					</div>
 				</div>
 				<Footer />
 			</div>
@@ -67,17 +80,12 @@ class SummaryPage extends React.Component {
 	}
 }
 
-export default SummaryPage;
+export default withRouter(SummaryPage);
 
 SummaryPage.propTypes = {
-	// answers: PropTypes.arrayOf(
-	// 	PropTypes.shape({
-	// 		title: PropTypes.string,
-	// 		score: PropTypes.number,
-	// 	}),
-	// ),
+	answers: PropTypes.object,
 };
 
 SummaryPage.defaultProps = {
-	answers: [],
+	answers: {},
 };

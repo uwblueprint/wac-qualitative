@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import Footer from './Footer';
 
 import logo from '../../public/images/largeLogo.png';
 import avatar from '../../public/images/personIcon.png';
-import '../App.css';
 import '../styles/_title_page.css';
-import Footer from './Footer';
+import '../styles/_buttons.css';
+import '../App.css';
 
 const TitlePage = ({ resetData }) => {
 	return (
@@ -27,13 +28,11 @@ const TitlePage = ({ resetData }) => {
 						copy of the survey tool that was used to collect the data, the codebook, and the
 						document that tells you how the data was sampled and collected.
 					</p>
-					<div className="buttonStyle">
-						<p>
-							<Link to={{ pathname: `/questionnaire` }} onClick={resetData}>
-								Begin
-							</Link>
-						</p>
-					</div>
+					<button className="primary">
+						<Link to={{ pathname: `/questionnaire` }} onClick={resetData}>
+							Begin
+						</Link>
+					</button>
 					<div className="introPic">
 						<img src={avatar} alt="Avatar" />
 					</div>
