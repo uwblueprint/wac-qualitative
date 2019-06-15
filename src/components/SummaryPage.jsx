@@ -15,8 +15,9 @@ const getResults = answers =>
 		const sectionAnswers = section.questions
 			.map(({ question }) => answers[question.id])
 			.filter(answer => answer && answer.score && answer.score < 99);
-		const sectionAverage =
-			sectionAnswers.reduce((sum, a) => sum + a.score, 0) / sectionAnswers.length;
+		const sectionAverage = sectionAnswers.length
+			? sectionAnswers.reduce((sum, a) => sum + a.score, 0) / sectionAnswers.length
+			: 3;
 		return {
 			title: section.section,
 			value: sectionAverage,
