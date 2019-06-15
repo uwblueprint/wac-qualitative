@@ -15,7 +15,8 @@ button {
   text-align: center;
   text-transform: capitalize;
 
-  transition: all 0.2s
+  transition: all 0.2s;
+  outline: none;
 }
 
 button:hover {
