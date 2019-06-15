@@ -1,14 +1,15 @@
 import { connect } from 'react-redux';
 
-import QuestionnaireHeader from '../components/QuestionnaireHeader';
+import SummaryPage from '../components/SummaryPage';
 
 const mapStateToProps = state => {
 	return {
-		pageNum: state.pageNum,
+    answers: state.answers,
+    ...state,
 	};
 };
 
 export default connect(
 	mapStateToProps,
 	null,
-)(QuestionnaireHeader);
+)(SummaryPage);
