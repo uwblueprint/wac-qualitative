@@ -25,7 +25,13 @@ const getResults = answers =>
 
 const getSummary = answers =>
 	sections.reduce(
-		(summary, section) => summary.concat(section.map(q => ({ [q.title]: answers[q.id] }))),
+		(summary, section) =>
+			summary.concat(
+				section.questions.map(({ question }) => ({
+					question: question.title,
+					answer: (answers[question.id] || {}).title,
+				})),
+			),
 		[],
 	);
 
@@ -64,12 +70,12 @@ class SummaryPage extends React.Component {
 export default SummaryPage;
 
 SummaryPage.propTypes = {
-	answers: PropTypes.arrayOf(
-		PropTypes.shape({
-			title: PropTypes.string,
-			score: PropTypes.number,
-		}),
-	),
+	// answers: PropTypes.arrayOf(
+	// 	PropTypes.shape({
+	// 		title: PropTypes.string,
+	// 		score: PropTypes.number,
+	// 	}),
+	// ),
 };
 
 SummaryPage.defaultProps = {
