@@ -1,8 +1,6 @@
 {
   "name": "wac-qualitative",
   "version": "0.1.0",
-  "private": true,
-  "homepage": "https://uwblueprint.github.io/wac-qualitative",
   "dependencies": {
     "postcss-extend": "^1.0.5",
     "postcss-import": "^12.0.1",
@@ -21,9 +19,6 @@
   "scripts": {
     "dev": "webpack-dev-server --config ./webpack.config.js --mode development",
     "start": "node server.js",
-    "build": "webpack --mode production",
-    "predeploy": "yarn run build",
-    "deploy": "gh-pages -d build",
     "heroku-postbuild": "webpack -p"
   },
   "eslintConfig": {
