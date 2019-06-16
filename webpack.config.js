@@ -4,7 +4,7 @@ const path = require("path");
 
 module.exports = {
   devServer: {
-    contentBase: path.join(__dirname, "dist"),
+    contentBase: path.join(__dirname, "/dist"),
     compress: true,
     port: 3000,
     // webpack routing fix to add new routes in App.js
@@ -12,7 +12,7 @@ module.exports = {
     publicPath: "/",
     historyApiFallback: true
   },
-  entry: path.resolve(__dirname, "./src/index.js"),
+  entry: ["./src/index.js"],
   module: {
     rules: [
       {
@@ -44,10 +44,9 @@ module.exports = {
     ]
   },
   output: {
-    path: __dirname,
-    publicPath: "/",
+    path: __dirname + "/dist",
+    publicPath: "/dist",
     filename: "bundle.js"
-    //chunkFilename: "[name].js"
   },
   plugins: [
     new MiniCssExtractPlugin({
