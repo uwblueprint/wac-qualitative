@@ -9,8 +9,8 @@ module.exports = {
     port: 3000,
     // webpack routing fix to add new routes in App.js
     // see https://bit.ly/2wwnRxZ for a further explanation
-    publicPath: '/',
-    historyApiFallback: true,
+    publicPath: "/",
+    historyApiFallback: true
   },
   entry: path.resolve(__dirname, "./src/index.js"),
   module: {
@@ -34,9 +34,9 @@ module.exports = {
         exclude: /node_modules/,
         use: [
           {
-            loader: 'file-loader',
+            loader: "file-loader",
             options: {
-              name: 'images/[name]-[hash:8].[ext]'
+              name: "images/[name]-[hash:8].[ext]"
             }
           }
         ]
@@ -44,9 +44,10 @@ module.exports = {
     ]
   },
   output: {
-    path: __dirname + '/dist',
-    filename: "bundle.js",
-    chunkFilename: "[name].js"
+    path: __dirname,
+    publicPath: "/",
+    filename: "bundle.js"
+    //chunkFilename: "[name].js"
   },
   plugins: [
     new MiniCssExtractPlugin({

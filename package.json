@@ -1,8 +1,8 @@
 {
-  "homepage": "https://uwblueprint.github.io/wac-qualitative/public",
   "name": "wac-qualitative",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://uwblueprint.github.io/wac-qualitative",
   "dependencies": {
     "postcss-extend": "^1.0.5",
     "postcss-import": "^12.0.1",
@@ -19,8 +19,12 @@
     "redux-thunk": "^2.3.0"
   },
   "scripts": {
-    "start": "webpack-dev-server --config ./webpack.config.js --mode development",
-    "build": "webpack --mode development"
+    "dev": "webpack-dev-server --config ./webpack.config.js --mode development",
+    "start": "node server.js",
+    "build": "webpack --mode production",
+    "predeploy": "yarn run build",
+    "deploy": "gh-pages -d build",
+    "heroku-postbuild": "webpack -p"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -47,8 +51,8 @@
     "postcss-loader": "^3.0.0",
     "style-loader": "^0.23.1",
     "svg-inline-loader": "^0.8.0",
-    "webpack": "^4.29.6",
-    "webpack-cli": "^3.3.0",
+    "webpack": "^4.34.0",
+    "webpack-cli": "^3.3.4",
     "webpack-dev-server": "^3.2.1",
     "webpack-node-externals": "^1.7.2"
   }
