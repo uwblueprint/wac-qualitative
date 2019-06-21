@@ -7,7 +7,7 @@ const ALPHABET = 'abcdefghijklmnopqrstuvwxyz';
 
 const QuestionCard = ({ id, question, answer, options, handleClick }) => (
 	<div className="card" id={id}>
-    <div className="errorMessage">Please answer this question.</div>
+		<div className="errorMessage">Please answer this question.</div>
 		<div className="questionNumber">Question {question.id}</div>
 		<div className="title">{question.title}</div>
 		<div className="grid-container">
@@ -15,8 +15,8 @@ const QuestionCard = ({ id, question, answer, options, handleClick }) => (
 				const letter = ALPHABET.charAt(i).toUpperCase();
 				if (answer && answer.title === opt.title) {
 					return (
-						<div className="selectedAnswer" key={i}>
-							<div className="selectedLetterOption">
+						<div className="answer selected" key={i}>
+							<div className="letterOption selected">
 								<div className="letter">{letter}</div>
 							</div>
 							<div className="answerText">{opt.title}</div>
