@@ -60,25 +60,23 @@
     width: 354px;
     height: 80px;
     margin-bottom: 10px;
-    padding-bottom: 10px;
     cursor: pointer;
 
     background: rgba(255, 255, 255, 0.5);
     border: 1px solid rgba(89, 79, 209, 0.4);
     box-sizing: border-box;
     border-radius: 2px;
+
+    transition: 1ms all;
 }
 
-.selectedAnswer {
-    position: relative;
-    width: 354px;
-    height: 80px;
-    margin-bottom: 10px;
+.answer:hover {
+    box-shadow: 1px 2px 6px rgba(143, 124, 255, 0.4);
+}
 
+.answer.selected {
     background: #F6F5FD;
     border: 1px solid #594FD1;
-    box-sizing: border-box;
-    border-radius: 2px;
 }
 
 .grid-container {
@@ -98,7 +96,7 @@
     background: #594FD1;
 }
 
-.selectedLetterOption {
+.letterOption.selected {
     position: absolute;
     top: 15px;
     width: 36px;
