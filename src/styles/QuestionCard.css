@@ -56,9 +56,9 @@
 }
 
 .answer {
+    display: flex;
     position: relative;
     width: 354px;
-    height: 80px;
     margin-bottom: 10px;
     cursor: pointer;
 
@@ -82,6 +82,7 @@
 .grid-container {
     display: grid;
     grid-template-columns: 354px 354px;
+    grid-auto-rows: minmax(80px, 1fr);
     grid-column-gap: 10px;
     justify-content: space-around;
     width: 718px;
@@ -121,10 +122,9 @@
 }
 
 .answerText {
-    position: absolute;
     width: 287.11px;
-    top: 17.86px;
-    left: 49.22px;
+    padding-top: 17.86px;
+    padding-left: 49.22px;
     margin-bottom: 20px;
 
     /* Body */
