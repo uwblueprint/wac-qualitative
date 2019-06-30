@@ -11,9 +11,7 @@ class QuestionnaireSection extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			answers: {},
-			answersEl: [],
-			highlightedAnswerIdx: null,
+			answers: {}
 		};
 
 		this.selectAnswer = this.selectAnswer.bind(this);
@@ -92,7 +90,7 @@ class QuestionnaireSection extends React.Component {
 		const section = sections[this.props.pageNum];
 		return (
 			<div className="questionSection">
-				<div className="questionContainer" ref={r => this.questionsEl = r}>
+				<div className="questionContainer">
 					{section.questions.map(({ question, options }) => (
 						<QuestionCard
 							id={question.id}
