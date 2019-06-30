@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/wac-qualitative/static/css/main.a5ed9d9e.chunk.css",
+    "main.js": "/wac-qualitative/static/js/main.9f0186ba.chunk.js",
+    "main.js.map": "/wac-qualitative/static/js/main.9f0186ba.chunk.js.map",
+    "runtime~main.js": "/wac-qualitative/static/js/runtime~main.8e07e21f.js",
+    "runtime~main.js.map": "/wac-qualitative/static/js/runtime~main.8e07e21f.js.map",
+    "static/js/2.05454c9d.chunk.js": "/wac-qualitative/static/js/2.05454c9d.chunk.js",
+    "static/js/2.05454c9d.chunk.js.map": "/wac-qualitative/static/js/2.05454c9d.chunk.js.map",
+    "index.html": "/wac-qualitative/index.html",
+    "precache-manifest.6d1b90c011085edf4173900745ba7134.js": "/wac-qualitative/precache-manifest.6d1b90c011085edf4173900745ba7134.js",
+    "service-worker.js": "/wac-qualitative/service-worker.js",
+    "static/css/main.a5ed9d9e.chunk.css.map": "/wac-qualitative/static/css/main.a5ed9d9e.chunk.css.map",
+    "static/media/personIcon.png": "/wac-qualitative/static/media/personIcon.079541f6.png"
+  }
+}
