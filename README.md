@@ -3,6 +3,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Setup
 
 ### Yarn
+
 Install yarn CLI
 Follow description at https://yarnpkg.com/lang/en/docs/install/
 
