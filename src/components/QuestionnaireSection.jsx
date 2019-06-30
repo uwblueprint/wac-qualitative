@@ -12,11 +12,22 @@ class QuestionnaireSection extends React.Component {
 		super(props);
 		this.state = {
 			answers: {},
+			answersEl: [],
+			highlightedAnswerIdx: null,
 		};
 
 		this.selectAnswer = this.selectAnswer.bind(this);
 		this.handleNext = this.handleNext.bind(this);
 		this.handlePrev = this.handlePrev.bind(this);
+		this.handleSelect = this.handleSelect.bind(this);
+	}
+
+	componentDidMount() {
+		window.addEventListener("keydown", this.handleSelect);
+	}
+
+	componentWillUnmount() {
+		window.removeEventListener("keydown", this.handleSelect);
 	}
 
 	getQuestionCard(id) {
@@ -36,6 +47,19 @@ class QuestionnaireSection extends React.Component {
 		this.getQuestionCard(id).classList.remove('error');
 	}
 
+	handleSelect(e) {
+		if (e.keyCode != 32) {
+			return;
+		}
+		
+		if (!Array.from(document.activeElement.classList).includes("answer")) {
+			return;
+		}
+
+		e.preventDefault();
+		document.activeElement.click();
+	}
+
 	handlePrev() {
 		if (this.props.pageNum > 0) {
 			window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -53,7 +77,6 @@ class QuestionnaireSection extends React.Component {
       const unansweredQuestionEls = unansweredQuestions.map(({ question }) => this.getQuestionCard(question.id))
 			unansweredQuestionEls.forEach(el => el.classList.add('error'));
 			unansweredQuestionEls[0].scrollIntoView({ behavior: 'smooth' });
-			unansweredQuestionEls[0].focus();
 			return;
 		}
 
@@ -69,10 +92,10 @@ class QuestionnaireSection extends React.Component {
 		const section = sections[this.props.pageNum];
 		return (
 			<div className="questionSection">
-				<div className="questionContainer">
+				<div className="questionContainer" ref={r => this.questionsEl = r}>
 					{section.questions.map(({ question, options }) => (
 						<QuestionCard
-							id={'question-' + question.id}
+							id={question.id}
 							key={question.id}
 							handleClick={this.selectAnswer}
 							answer={this.state.answers[question.id]}

@@ -6,16 +6,17 @@ import '../styles/QuestionCard.css';
 const ALPHABET = 'abcdefghijklmnopqrstuvwxyz';
 
 const QuestionCard = ({ id, question, answer, options, handleClick }) => (
-	<div className="card" id={id}>
+	<div className="card" id={"question-" + id}>
 		<div className="errorMessage">Please answer this question.</div>
 		<div className="questionNumber">Question {question.id}</div>
 		<div className="title">{question.title}</div>
 		<div className="grid-container">
 			{options.map((opt, i) => {
 				const letter = ALPHABET.charAt(i).toUpperCase();
+				const tabIdx = id * 10 + i + 1;
 				if (answer && answer.title === opt.title) {
 					return (
-						<div className="answer selected" key={i}>
+						<div className="answer selected" key={i} tabIndex={tabIdx}>
 							<div className="letterOption selected">
 								<div className="letter">{letter}</div>
 							</div>
@@ -28,6 +29,7 @@ const QuestionCard = ({ id, question, answer, options, handleClick }) => (
 						key={i}
 						className="answer"
 						onClick={() => handleClick(question.id, opt.title, opt.score)}
+						tabIndex={tabIdx}
 					>
 						<div className="letterOption">
 							<div className="letter">{letter}</div>
