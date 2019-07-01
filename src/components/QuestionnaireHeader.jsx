@@ -9,7 +9,7 @@ import "../styles/header.css";
 const QuestionnaireHeader = ({ pageNum }) => (
   <div className="header-container">
     <div>
-      <img className="logo" src={`/${logo}`} alt="Logo" />
+      <img className="logo" src={logo} alt="Logo" />
     </div>
     <h2 className="text header">Dataset Bias Assessment Tool</h2>
     <p className="text subheader">

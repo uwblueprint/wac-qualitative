@@ -54,7 +54,7 @@ class SummaryPage extends React.Component {
       <div>
         <div className="header-container summary-header">
           <div>
-            <img className="logo" src={`/${logo}`} alt="Logo" />
+            <img className="logo" src={logo} alt="Logo" />
           </div>
           <h2 className="text header">Dataset Bias Assessment Tool</h2>
           <h1 className="text title"> Summary of Results </h1>
