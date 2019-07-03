@@ -7,6 +7,9 @@ import sections from '../survey_data.json';
 import '../styles/QuestionnaireSection.css';
 import '../styles/_buttons.css';
 
+const KEY_ENTER = 13;
+const KEY_SPACE = 32;
+
 class QuestionnaireSection extends React.Component {
 	constructor(props) {
 		super(props);
@@ -46,16 +49,15 @@ class QuestionnaireSection extends React.Component {
 	}
 
 	handleSelect(e) {
-		if (e.keyCode != 32) {
-			return;
+		if (e.keyCode == KEY_SPACE && 
+			Array.from(document.activeElement.classList).includes("answer")) {
+			e.preventDefault();
+			document.activeElement.click();
 		}
-		
-		if (!Array.from(document.activeElement.classList).includes("answer")) {
-			return;
+		if (e.keyCode == KEY_ENTER) {
+			e.preventDefault();
+			this.handleNext();
 		}
-
-		e.preventDefault();
-		document.activeElement.click();
 	}
 
 	handlePrev() {
