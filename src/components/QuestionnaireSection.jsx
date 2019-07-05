@@ -7,16 +7,28 @@ import sections from '../survey_data.json';
 import '../styles/QuestionnaireSection.css';
 import '../styles/_buttons.css';
 
+const KEY_ENTER = 13;
+const KEY_SPACE = 32;
+
 class QuestionnaireSection extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			answers: {},
+			answers: {}
 		};
 
 		this.selectAnswer = this.selectAnswer.bind(this);
 		this.handleNext = this.handleNext.bind(this);
 		this.handlePrev = this.handlePrev.bind(this);
+		this.handleSelect = this.handleSelect.bind(this);
+	}
+
+	componentDidMount() {
+		window.addEventListener("keydown", this.handleSelect);
+	}
+
+	componentWillUnmount() {
+		window.removeEventListener("keydown", this.handleSelect);
 	}
 
 	getQuestionCard(id) {
@@ -36,6 +48,18 @@ class QuestionnaireSection extends React.Component {
 		this.getQuestionCard(id).classList.remove('error');
 	}
 
+	handleSelect(e) {
+		if (e.keyCode == KEY_SPACE && 
+			Array.from(document.activeElement.classList).includes("answer")) {
+			e.preventDefault();
+			document.activeElement.click();
+		}
+		if (e.keyCode == KEY_ENTER) {
+			e.preventDefault();
+			this.handleNext();
+		}
+	}
+
 	handlePrev() {
 		if (this.props.pageNum > 0) {
 			window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -53,7 +77,6 @@ class QuestionnaireSection extends React.Component {
       const unansweredQuestionEls = unansweredQuestions.map(({ question }) => this.getQuestionCard(question.id))
 			unansweredQuestionEls.forEach(el => el.classList.add('error'));
 			unansweredQuestionEls[0].scrollIntoView({ behavior: 'smooth' });
-			unansweredQuestionEls[0].focus();
 			return;
 		}
 
@@ -72,7 +95,7 @@ class QuestionnaireSection extends React.Component {
 				<div className="questionContainer">
 					{section.questions.map(({ question, options }) => (
 						<QuestionCard
-							id={'question-' + question.id}
+							id={question.id}
 							key={question.id}
 							handleClick={this.selectAnswer}
 							answer={this.state.answers[question.id]}
