@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link, withRouter } from 'react-router-dom';
 import SummaryBox from './SummaryBox';
-import { exportCSV } from '../actions';
+import { exportCSV } from '../utils';
 import sections from '../survey_data.json';
 
 import logo from '../../public/images/logo.png';
