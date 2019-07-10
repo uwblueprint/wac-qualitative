@@ -3,8 +3,9 @@
 # Check https://circleci.com/docs/2.0/language-javascript/ for more details
 #
 version: 2
+
 jobs:
-  build:
+  react-build:
     docker:
       # specify the version you desire here
       - image: circleci/node:10.16
@@ -26,9 +27,25 @@ jobs:
             # fallback to using the latest cache if no exact match is found
             - v1-dependencies-
 
-      - run: npm install && CI=false && npm run deploy
+      - run:
+        name: Install dependencies and deploy
+        command: |
+          npm install 
+          CI=false
+          git config user.email "rohilvg@gmail.com"
+          git config user.name "Rohil Gupta"
+          npm run build
 
       - save_cache:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
+
+workflows:
+  version: 2
+  build:
+    jobs:
+      - react-build:
+          filters:
+            branches:
+              only: master
