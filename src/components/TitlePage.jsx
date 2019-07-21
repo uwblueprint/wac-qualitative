@@ -8,6 +8,7 @@ import avatar from "../images/personIcon.png";
 import "../styles/_title_page.css";
 import "../styles/_buttons.css";
 import "../App.css";
+import InteractivePieChart from "../components/InteractivePieChart";
 
 const TitlePage = ({ resetData }) => {
   return (
