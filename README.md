@@ -1,3 +1,6 @@
+If you choose to fork this, to maintain the CI/CD pipeline with CircleCi, be sure to modify the `config.yml` and replace the git user.email and user.name to your user's corresponding ones. Prior to doing so, ensure that your user has admin rights on your forked repo.
+______________________________________________________________________________________________________________________________
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Setup
