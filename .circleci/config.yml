@@ -78,8 +78,8 @@ workflows:
     jobs:
       - prepare
       - build
-        requires:
-          - prepare
+          requires:
+            - prepare
       - deploy-to-github:
           requires:
             - build
