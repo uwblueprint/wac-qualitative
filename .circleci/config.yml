@@ -1,34 +1,87 @@
-# Javascript Node CircleCI 2.0 configuration file
-#
-# Check https://circleci.com/docs/2.0/language-javascript/ for more details
-#
+defaults: &defaults #working_directory: ./circleci
+  docker:
+    - image: circleci/node:10.16
+
 version: 2
 jobs:
-  build:
-    docker:
-      # specify the version you desire here
-      - image: circleci/node:10.16
-
-        # Specify service dependencies here if necessary
-        # CircleCI maintains a library of pre-built images
-        # documented at https://circleci.com/docs/2.0/circleci-images/
-        # - image: circleci/mongo:3.4.4
-
-        working_directory: ~/repo
-
+  prepare:
+    <<: *defaults
     steps:
       - checkout
-
       # Download and cache dependencies
       - restore_cache:
           keys:
             - v1-dependencies-{{ checksum "package.json" }}
-            # fallback to using the latest cache if no exact match is found
-            - v1-dependencies-
-
-      - run: npm install && CI=false && npm run build
-
+      - run: npm install
       - save_cache:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
+      - persist_to_workspace:
+          root: .
+          paths:
+            - node_modules
+
+  build:
+    <<: *defaults
+    steps:
+      - checkout
+      - attach_workspace:
+          at: .
+      - run: CI=false && npm run build
+      - persist_to_workspace:
+          root: .
+          paths:
+            - build
+
+  deploy-to-github:
+    <<: *defaults
+    steps:
+      - checkout
+      - attach_workspace:
+          at: .
+      - deploy:
+          name: Deploy to GitHub Pages
+          command: |
+            set -e
+            remote=$(git config remote.origin.url)
+            if [ ! -d "build" ]
+            then
+                echo "build folder not found"
+                exit 1
+            fi
+            mkdir gh-pages-branch
+            cd gh-pages-branch
+            git config --global user.email "rohilvg@gmail.com" > /dev/null 2>&1
+            git config --global user.name "Rohil Gupta" > /dev/null 2>&1
+            git init
+            git remote add --fetch origin "$remote"
+            if git rev-parse --verify origin/gh-pages > /dev/null 2>&1
+            then
+                git checkout gh-pages
+                git rm -rf .
+            else
+                git checkout --orphan gh-pages
+            fi
+            cp -a "../build/." .
+            git add -A
+            git commit --allow-empty -m "Deploy to GitHub pages [ci skip]"
+            git push --force --quiet origin gh-pages > /dev/null 2>&1
+            cd ..
+            rm -rf gh-pages-branch
+            echo "Finished GitHub pages Deployment!"
+
+workflows:
+  version: 2
+  build_accept_deploy:
+    jobs:
+      - prepare
+      - build:
+          requires:
+            - prepare
+      - deploy-to-github:
+          requires:
+            - build
+          filters:
+            branches:
+              only: master
